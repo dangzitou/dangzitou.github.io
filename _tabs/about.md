@@ -4,16 +4,17 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-# 关于我
-
 ## 个人简介
 编程爱好者，对人工智能和深度学习充满热情，同时也对计算机硬件有浓厚的兴趣。热衷于解决复杂问题并将理论知识付诸实践。
+
 ## 教育背景
 
 - **本科** - 厦门大学 计算机科学与技术 (2023-)
 - **中学** - 广东肇庆中学 （2017-2023）
+
 ## 常驻地
 - 中国厦门
+
 ## 专业技能
 
 ### 编程语言
@@ -46,8 +47,8 @@ order: 4
 ## 联系方式
 
 - **Email**: dengzitao@stu.xmu.edu.cn
-- **GitHub**: https://github.com/dangzitou
-- **个人网站**: https://dangzitou.github.io
+- **GitHub**: [https://github.com/dangzitou](https://github.com/dangzitou)
+- **个人网站**: [https://dangzitou.github.io](https://dangzitou.github.io)
 
 > 欢迎通过以上方式与我联系，期待与您的交流！
 {: .prompt-info }

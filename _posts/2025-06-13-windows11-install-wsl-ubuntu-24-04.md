@@ -47,7 +47,7 @@ tags: [Windows11, WSL, Ubuntu, 环境搭建]
 ### 方法二：
 - 由于主包的MsStore故障了，所以不得已采用第二种方法
 ![alt text](/assets/post_imgs/2025-06-13-windows11-install-wsl-ubuntu24-04/image-2.png)
-1. 进入Ubuntu官网下载WSL版本（网址：https://ubuntu.com/desktop/wsl）
+1. 进入 [Ubuntu官网](https://ubuntu.com/desktop/wsl) 下载WSL版本
 ![alt text](/assets/post_imgs/2025-06-13-windows11-install-wsl-ubuntu24-04/image-3.png)
 2. 下载解压后得到一个`ubuntu-24.04.2-wsl-amd64`文件
 3. 修改文件名，添加后缀`.tar`，便于后续解压安装
