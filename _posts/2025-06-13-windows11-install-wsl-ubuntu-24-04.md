@@ -123,7 +123,7 @@ tags: [Windows11, WSL, Ubuntu, 环境搭建]
 nano ~/.bashrc
 ```
 
-#### 3. 用鼠标滚轮或方向键滑动到文件末尾，添加如下代码（这里的`7899`设置成你自己刚刚在代理软件设置的HTTP端口）：
+#### 3. 用鼠标滚轮或方向键滑动到文件末尾，添加如下代码（这里的`7899`设置成你自己刚刚在代理软件设置的HTTP端口），按 `Ctrl+O`（写入），回车确定，然后 `Ctrl+X` 退出。
 ```
 WSL_HOST_IP=$(ip route | grep -m 1 default | awk '{print $3}')
 export http_proxy="http://$WSL_HOST_IP:7899"
