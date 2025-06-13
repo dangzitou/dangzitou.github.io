@@ -63,12 +63,12 @@ tags: [Windows11, WSL, Ubuntu, 环境搭建]
     出现这样的页面即为安装成功
     ![alt text](/assets/post_imgs/2025-06-13-windows11-install-wsl-ubuntu24-04/image-5.png)
 ## 四、启动Ubuntu
-1. **方法一**：开始菜单启动（简单快捷）
+### 1. **方法一**：开始菜单启动（简单快捷）
 - 按下键盘上的 Win 键（或点击屏幕左下角的开始菜单）。
 - 直接在搜索框输入 “Ubuntu” 或你安装时命名的发行版名称（如“Ubuntu-24.04”）。
 - 出现“Ubuntu”应用后，点击它即可打开 Ubuntu 终端。
     ![alt text](/assets/post_imgs/2025-06-13-windows11-install-wsl-ubuntu24-04/image-6.png)
-2. **方法二**：使用 Windows Terminal（个人推荐，自定义化程度高）
+### 2. **方法二**：使用 Windows Terminal（个人推荐，自定义化程度高）
 - 打开 Windows Terminal（`Win + x`再点击`终端`或直接搜索`终端`）。
 - 在下拉菜单中选择“Ubuntu”或你导入的 WSL 发行版名称。
 - 点击后会自动打开对应的 Linux 终端。
@@ -76,7 +76,7 @@ tags: [Windows11, WSL, Ubuntu, 环境搭建]
 - 如果希望以后每次打开终端默认进入Ubuntu，可以设置一下默认配置文件为Ubuntu（如下图所示）
 ![alt text](/assets/post_imgs/2025-06-13-windows11-install-wsl-ubuntu24-04/image-10.png)
 ![alt text](/assets/post_imgs/2025-06-13-windows11-install-wsl-ubuntu24-04/image-11.png)
-3. **方法三**：命令行启动
+### 3. **方法三**：命令行启动
 - 按 Win + R，输入 wsl 回车，默认会进入你设置的默认 Linux 发行版（比如 Ubuntu）。
 - 如果你有多个 WSL 发行版，输入如下命令启动指定的版本：
     ```
@@ -92,6 +92,7 @@ tags: [Windows11, WSL, Ubuntu, 环境搭建]
 
 ### 1. 安装速度慢/下载失败
 - 建议切换到国内源后再更新系统，或使用科学上网工具。
+
 ### 2. wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
 ![alt text](/assets/post_imgs/2025-06-13-windows11-install-wsl-ubuntu24-04/image-9.png)
 这不是报错，而是一个“警告”或“提示”
@@ -104,6 +105,7 @@ tags: [Windows11, WSL, Ubuntu, 环境搭建]
 但 WSL2 是一个虚拟网络环境，WSL2 里的 127.0.0.1 指向的是 Linux 子系统自己，而不是 Windows 的 127.0.0.1，所以不能直接访问 Windows 上的 localhost 代理。
 
 如果你不想看到这个提示，直接把科学上网工具退出了就好。如果想让WSL能够使用代理上网，可以看下一条。
+
 ### 3. 如何能让WSL能够使用代理上网？
 
 这一点对于要经常性访问外网下载东西的开发者来说很重要。
