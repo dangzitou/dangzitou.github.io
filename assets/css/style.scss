@@ -1,10 +1,13 @@
-/* 让 Chirpy 文章封面图自适应显示全部，背景透明 */
-.post-content .post-preview-image,
+/* 强制文章头图完整显示，防止被裁剪和放大 */
+.post .post-image,
 .post .post-preview-image,
-.post .post-image {
+.post-content .post-preview-image {
   object-fit: contain !important;
   width: 100% !important;
   height: auto !important;
-  max-height: 400px !important; /* 可自定义最大高度 */
-  background: transparent !important; /* 背景透明 */
+  max-height: 400px !important; /* 或你想要的高度 */
+  background: transparent !important;
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
