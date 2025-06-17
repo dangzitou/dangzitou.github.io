@@ -2,7 +2,7 @@
 title: "Windows 11 下安装 WSL 和 Ubuntu 24.04 全记录"
 date: 2025-06-12 10:00:00 +0800
 categories: [教程]
-tags: [Windows11, WSL, Ubuntu, 环境搭建]
+tags: [Windows11, WSL, Ubuntu, Linux, 环境搭建]
 ---
 
 ## 前言
