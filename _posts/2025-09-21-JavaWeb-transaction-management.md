@@ -4,7 +4,6 @@ date: 2025-09-21 18:00:00 +0800
 categories: [Java, 学习记录]
 tags: [Spring, 事务管理, JavaWeb, 数据库]
 ---
-# JavaWeb学习记录-Spring事务管理
 ## 前言
 今天是JavaWeb学习的第十天，进行首个小型项目——tlias教学管理系统开发的第五天，正在开发员工的新增功能。
 这个时候就要用到Spring框架中的事务管理功能了，因为比如说下面的代码：
