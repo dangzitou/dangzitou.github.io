@@ -1,7 +1,7 @@
 ---
 title: "Debugging \"Service not found\" Issue in RPC Framework"
 date: 2026-02-28 10:00:00 +0800
-categories: [教程]
+categories: [Java, 学习记录]
 tags: [RPC, Java, Etcd, ZooKeeper, 服务注册与发现, 分布式系统, 动态代理, 异常排查, Spring Boot, Maven]
 ---
 
