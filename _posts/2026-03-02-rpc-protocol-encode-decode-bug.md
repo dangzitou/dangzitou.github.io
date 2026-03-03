@@ -1,6 +1,6 @@
 ---
 title: "RPC 自定义协议编解码踩坑记录：bodyLength 读取错误导致越界"
-date: 2025-06-13 15:00:00 +0800
+date: 2026-03-02 15:00:00 +0800
 categories: [Java, rpc, 学习记录]
 tags: [Java, RPC, Vert.x, 网络编程, 协议设计, 调试]
 ---
