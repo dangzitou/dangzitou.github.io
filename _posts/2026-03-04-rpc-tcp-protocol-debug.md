@@ -1,7 +1,7 @@
 ---
 title: "手写 RPC 框架踩坑记录：自定义 TCP 协议调试全过程"
 date: 2026-03-04 20:27:00 +0800
-categories: [Java, 学习笔记, rpc]
+categories: [Java, 学习记录, rpc]
 tags: [RPC, Java, Vert.x, TCP, 自定义协议, 踩坑]
 
 ---
