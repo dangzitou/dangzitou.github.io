@@ -6,13 +6,13 @@ date: 2026-03-05 16:00:00 +0800
 
 categories: [Java, 学习记录, rpc]
 
-tags: [Java, Vert.x, TCP, RPC, 网络编程, 设计模式]
+tags: [Java, Vert.x, TCP, RPC, 网络编程, 设计模式, 装饰者模式]
 
 ---
 
 ## 前言
 
-在学习手写 RPC 框架的过程中，遇到了基于 Vert.x 实现的 TCP 服务器处理消息的一段代码。初看之下，既没有 `while` 循环，又有 Lambda、匿名内部类、事件驱动等多种概念交织在一起，让人摸不着头脑。本文从零开始，通俗地梳理这段代码的完整执行流程，希望能帮助同样在学习 Vert.x 或 RPC 框架的朋友理解这套设计。
+在学习手写 RPC 框架的过程中，遇到了基于 Vert.x 实现的 TCP 服务器处理消息的一段代码。初看之下，既没有 `while` 循环，又有 Lambda、匿名内部类、事件驱动等多种概念交织在一起，让人摸不着头脑。本文从零开始，通俗地梳理这段代码的完整执行流程，并分析其中蕴含的设计模式，希望能帮助同样在学习 Vert.x 或 RPC 框架的朋友理解这套设计。
 
 ---
 
@@ -213,7 +213,31 @@ setOutput.handle()【第二次】
 
 ---
 
-## 五、设计亮点总结
+## 五、设计亮点：装饰者模式
+
+细心观察会发现，`TcpBufferHandlerWrapper` 的设计正是**装饰者模式（Decorator Pattern）​**的典型实现。
+
+装饰者模式的核心思想是：**在不改变原有对象结构的情况下，通过包装的方式动态地为对象添加新的职责。​**
+
+对应到这段代码：
+
+- **被装饰的对象**：业务逻辑 Lambda `buffer -> {...}`，类型为 `Handler<Buffer>`
+- **装饰者**：`TcpBufferHandlerWrapper`，同样实现了 `Handler<Buffer>` 接口
+- **新增的职责**：TCP 拆包能力（`RecordParser` 的逻辑）
+
+```
+netSocket.handler(tcpBufferHandlerWrapper)
+                     ↑
+          装饰者（负责拆包）
+                     ↑
+          被装饰者（业务逻辑 Lambda）
+```
+
+`TcpBufferHandlerWrapper` 从外部看和普通的 `Handler<Buffer>` 没有任何区别，可以直接传给 `netSocket.handler()`。但它在内部悄悄地给业务 Handler 套上了一层拆包逻辑，业务层完全感知不到 TCP 粘包问题的存在。这种透明包装的方式，正是装饰者模式最大的优雅之处。
+
+---
+
+## 六、总结
 
 这套代码把三个关注点完全分离开了：
 
@@ -221,6 +245,6 @@ setOutput.handle()【第二次】
 - **​`RecordParser` + `setOutput`​**：只管按协议格式切割字节，维护解析状态，不关心业务逻辑。
 - **​`buffer -> { 业务逻辑 }`​**：只管处理一条完整的消息，不关心字节是怎么凑齐的。
 
-每一层都只做自己的事，职责清晰，扩展方便。如果将来要换一套协议格式，只需要修改 `TcpBufferHandlerWrapper` 里的解析规则，业务层完全不需要动。
+如果将来要换一套协议格式，只需要修改 `TcpBufferHandlerWrapper` 里的解析规则，业务层完全不需要动。这种基于装饰者模式的分层设计，在网络编程中非常值得借鉴。
 
 ---
