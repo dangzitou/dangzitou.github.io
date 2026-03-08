@@ -52,7 +52,7 @@ order: 4
 
 这些项目是我实现的系统项目。
 
-### zyro-rpc
+### [zyro-rpc](https://github.com/dangzitou/zyro-rpc)
 轻量级高可用 RPC 框架
 
 - Java + Vert.x + Etcd
@@ -60,12 +60,9 @@ order: 4
 - SPI 扩展机制
 - 负载均衡与容错策略
 
-项目地址  
-[https://github.com/dangzitou/zyro-rpc](https://github.com/dangzitou/zyro-rpc)
-
 ---
 
-### zyro-go
+### [zyro-go](https://github.com/dangzitou/zyro-go)
 高并发本地生活服务平台
 
 - Spring Boot + MySQL + Redis
@@ -73,9 +70,6 @@ order: 4
 - Lua 原子校验
 - Redisson 分布式锁
 - 缓存优化策略
-
-项目地址  
-[https://github.com/dangzitou/zyro-go](https://github.com/dangzitou/zyro-go)
 
 ---
 
