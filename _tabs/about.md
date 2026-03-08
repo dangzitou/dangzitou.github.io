@@ -7,17 +7,15 @@ order: 4
 ## 关于我
 
 你好，我是 **邓梓滔 (Zitao Deng)**。  
-厦门大学计算机科学与技术本科在读，主要在关注 **后端开发**。
+厦门大学计算机科学与技术本科在读，主要关注 **后端开发**。
 
-我喜欢通过 **自己实现系统组件和框架** 来理解底层原理，并将学习过程中遇到的问题记录在博客中。
+这个博客主要用来记录学习过程中遇到的问题以及对应的解决过程，也会整理一些开发过程中的经验和笔记。
 
 ---
 
 # 教育背景
 
-厦门大学  
-计算机科学与技术 本科  
-2023 - 2027
+- 厦门大学  计算机科学与技术 本科  2023 - 2027
 
 ---
 
@@ -63,7 +61,7 @@ order: 4
 - 负载均衡与容错策略
 
 项目地址  
-https://github.com/dangzitou/zyro-rpc
+[https://github.com/dangzitou/zyro-rpc](https://github.com/dangzitou/zyro-rpc)
 
 ---
 
@@ -77,35 +75,23 @@ https://github.com/dangzitou/zyro-rpc
 - 缓存优化策略
 
 项目地址  
-https://github.com/dangzitou/zyro-go
+[https://github.com/dangzitou/zyro-go](https://github.com/dangzitou/zyro-go)
 
 ---
 
 # 其他项目
 
-这些项目主要是学习过程中的实践和探索。
+主要是学习过程中的实践和探索。
 
-可以在我的 GitHub 仓库中查看：
-
-https://github.com/dangzitou
-
----
-
-# 技术博客
-
-我会记录学习过程中遇到的问题和解决方案：
-
-https://dangzitou.github.io
+可以在[我的 GitHub 仓库](https://github.com/dangzitou)中查看：
 
 ---
 
 # 联系方式
 
-Email  
-dengzitao@stu.xmu.edu.cn
-
-GitHub  
-https://github.com/dangzitou
+- **Email**: dengzitao888@163.com
+- **GitHub**: [https://github.com/dangzitou](https://github.com/dangzitou)
+- **个人网站**: [https://dangzitou.github.io](https://dangzitou.github.io)
 
 ---
 
