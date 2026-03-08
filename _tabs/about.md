@@ -4,54 +4,110 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-## 个人简介
-编程爱好者，对人工智能和深度学习充满热情，同时也对计算机硬件有浓厚的兴趣。热衷于解决复杂问题并将理论知识付诸实践。
+## 关于我
 
-## 教育背景
+你好，我是 **邓梓滔 (Zitao Deng)**。  
+厦门大学计算机科学与技术本科在读，主要在关注 **后端开发**。
 
-- **本科** - 厦门大学 计算机科学与技术 (2023-)
-- **中学** - 广东肇庆中学 （2017-2023）
+我喜欢通过 **自己实现系统组件和框架** 来理解底层原理，并将学习过程中遇到的问题记录在博客中。
 
-## 常驻地
-- 中国厦门
+---
 
-## 专业技能
+# 教育背景
 
-### 编程语言
-- **精通**：C/C++, Python
-- **熟悉**：JavaScript, Vue, HTML/CSS
-- **了解**：Java
+厦门大学  
+计算机科学与技术 本科  
+2023 - 2027
 
-### 开发工具
-- **IDE & 编辑器**：VS Code, Visual Studio, HBuilderX
-- **版本控制**：Git, GitHub
-- **其他工具**：Docker, Linux
+---
 
-### 专业知识
-- 数据结构与算法
-- 算法设计与分析
-- 机器学习
-- 深度学习
-- 数字逻辑
-- 大模型开发基础
-- 离散数学
-- 线性代数
+## 技术方向
 
-## 兴趣爱好
+**后端开发**
 
-- 健身
-- 旅游
-- 音乐
-- 摄影
+- Java / Spring Boot / MyBatis-Plus
+- RESTful API 设计
+- 服务模块化开发
 
-## 联系方式
+**数据库与缓存**
 
-- **Email**: dengzitao@stu.xmu.edu.cn
-- **GitHub**: [https://github.com/dangzitou](https://github.com/dangzitou)
-- **个人网站**: [https://dangzitou.github.io](https://dangzitou.github.io)
+- MySQL
+- Redis（ZSet / Set / List / GEO / Bitmap）
+- 缓存设计与高并发优化
 
-> 欢迎通过以上方式与我联系，期待与您的交流！
-{: .prompt-info }
+**分布式系统**
 
-> "Done is Better than Perfect"
+- Redis Stream
+- Redisson 分布式锁
+- 服务注册发现（Etcd / ZooKeeper）
+
+**网络通信**
+
+- Netty
+- Vert.x
+- TCP 通信
+- RPC 框架原理（动态代理 / SPI / 负载均衡 / 容错）
+
+---
+
+# 核心项目
+
+这些项目是我实现的系统项目。
+
+### zyro-rpc
+轻量级高可用 RPC 框架
+
+- Java + Vert.x + Etcd
+- 自定义协议 + 动态代理
+- SPI 扩展机制
+- 负载均衡与容错策略
+
+项目地址  
+https://github.com/dangzitou/zyro-rpc
+
+---
+
+### zyro-go
+高并发本地生活服务平台
+
+- Spring Boot + MySQL + Redis
+- Redis Stream 异步削峰
+- Lua 原子校验
+- Redisson 分布式锁
+- 缓存优化策略
+
+项目地址  
+https://github.com/dangzitou/zyro-go
+
+---
+
+# 其他项目
+
+这些项目主要是学习过程中的实践和探索。
+
+可以在我的 GitHub 仓库中查看：
+
+https://github.com/dangzitou
+
+---
+
+# 技术博客
+
+我会记录学习过程中遇到的问题和解决方案：
+
+https://dangzitou.github.io
+
+---
+
+# 联系方式
+
+Email  
+dengzitao@stu.xmu.edu.cn
+
+GitHub  
+https://github.com/dangzitou
+
+---
+
+> Done is Better than Perfect
 {: .prompt-tip }
