@@ -1,6 +1,6 @@
 ---
 title: "腾讯开源了个「数字生命」，我还顺手给它打了三个月工"
-date: 2026-10-04 01:30:00 +0800
+date: 2026-09-30 21:00:00 +0800
 categories: [技术]
 tags: [AI, Agent, 开源, 腾讯, Octop]
 ---
@@ -15,7 +15,7 @@ tags: [AI, Agent, 开源, 腾讯, Octop]
 
 这个仪式感，是它自带的。每个新生的 agent 都要走一遍这个流程，给自己建档。
 
-这个东西叫 Octop，腾讯云今年七月初在 GitHub 上开源的自托管 AI 助手平台。创造三个月出头，6.5k star，808 个 fork，还上了 trendshift 的趋势榜。README 开头第一句话就很狂，它 not just a tool，它是一个可以并行运作的数字生命。
+这个东西叫 Octop，腾讯云今年七月初在 GitHub 上开源的自托管 AI 助手平台。开源不到三个月，6.5k star，808 个 fork，还上了 trendshift 的趋势榜。README 开头第一句话就很狂，它 not just a tool，它是一个可以并行运作的数字生命。
 
 ![Octop 的 GitHub 主页，三个月 6.5k star](/assets/post_imgs/2026-10-04-octop/github-repo.png)
 
@@ -79,7 +79,7 @@ tags: [AI, Agent, 开源, 腾讯, Octop]
 
 好了，吹也吹完了，聊聊更现实的问题，市场。
 
-先看它站在哪。这个增长曲线本身就值得单独一说，八月中官方材料里的口径还是一千多个 star，到十月初已经 6.5k，两个月翻了五倍多。一个动辄几十个 IM 适配、要装在自己电脑上的重东西，涨成这样，说明它踩中的不是新鲜感，是真需求。
+先看它站在哪。这个增长曲线本身就值得单独一说，八月中官方材料里的口径还是一千多个 star，到九月底已经 6.5k，一个半月翻了五倍多。一个动辄几十个 IM 适配、要装在自己电脑上的重东西，涨成这样，说明它踩中的不是新鲜感，是真需求。
 
 自托管 AI 助手这个赛道，绕不开一个前浪，OpenClaw。有意思的是 Octop 跟 OpenClaw 的关系不是简单的竞品。它前身叫 LightClaw，代码里到处是 OpenClaw 的血统，Codex OAuth 的协议头直接复用 OpenClaw 的线上契约，dashboard 里内置了一键从 OpenClaw 迁移的向导，模型配置、通道、工作区、技能，整包搬家。同一生态里还有个 Hermes，也是从 OpenClaw 的用户池里长出来的，三家放一起，活脱脱一场三国杀。
 
