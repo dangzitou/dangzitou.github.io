@@ -1,5 +1,5 @@
 ---
-title: "我给自己写了个不会说谎的 coding agent"
+title: "keel-agent：一个带验证契约的 coding agent"
 date: 2026-10-04 02:30:00 +0800
 categories: [技术]
 tags: [AI, Agent, 开源, keel, Apache]
