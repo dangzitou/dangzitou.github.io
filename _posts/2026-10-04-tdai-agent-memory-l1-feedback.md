@@ -50,6 +50,9 @@ TencentDB-Agent-Memory 的思路是，不争上下文窗口，在 Agent 和大�
 
 对应认知科学：**工作记忆（Working Memory）**，容量有限但保留完整细节
 
+![遗忘曲线：Ebbinghaus 的经典研究](/assets/post_imgs/2026-10-04-tdai-memory/forgetting-curve-wiki.png)
+*图：遗忘曲线显示记忆随时间快速衰减，Ebbinghaus (1885) 的开创性研究*
+
 ### 2.2 L1 - 原子记忆层（Atomic Memory）
 
 **作用**：提取可独立理解的事实单元
@@ -67,6 +70,9 @@ TencentDB-Agent-Memory 的思路是，不争上下文窗口，在 Agent 和大�
 
 对应认知科学：**情景记忆（Episodic Memory）** 的编码过程，将经历拆解成可检索的记忆单元
 
+![提取练习效应](/assets/post_imgs/2026-10-04-tdai-memory/testing-effect-wiki.png)
+*图：Testing Effect - 提取练习比重复学习更能增强长期记忆 (Roediger & Karpicke, 2006)*
+
 ### 2.3 L2 - 场景记忆层（Scenario Memory）
 
 **作用**：围绕项目/场景整合相关记忆
@@ -76,6 +82,9 @@ TencentDB-Agent-Memory 的思路是，不争上下文窗口，在 Agent 和大�
 - 系统里跑这个活的 prompt 开头自称：记忆整合架构师，你不仅是记录数据，更像一位人类学家和心理学家
 
 对应认知科学：**语义记忆（Semantic Memory）** 的初步形成，将情景记忆抽象成知识
+
+![记忆巩固过程](/assets/post_imgs/2026-10-04-tdai-memory/memory-consolidation-wiki.png)
+*图：Memory Consolidation - 记忆从海马体转移到大脑皮层的巩固过程*
 
 ### 2.4 L3 - 核心记忆层（Core/Persona）
 
@@ -440,7 +449,10 @@ Frame Gate 打破了这个循环：当记忆内容本身标明「这是历史」
 
 1. [TencentDB-Agent-Memory GitHub](https://github.com/TencentCloud/TencentDB-Agent-Memory)
 2. [PersonaMem Benchmark](https://github.com/TencentCloud/TencentDB-Agent-Memory#benchmark)
-3. Ebbinghaus, H. (1885). Memory: A Contribution to Experimental Psychology
-4. Roediger, H. L., & Karpicke, J. D. (2006). Test-enhanced learning: Taking memory tests improves long-term retention. Psychological Science
+3. Ebbinghaus, H. (1885). [Memory: A Contribution to Experimental Psychology](https://en.wikipedia.org/wiki/Forgetting_curve)
+4. Roediger, H. L., & Karpicke, J. D. (2006). [Test-enhanced learning: Taking memory tests improves long-term retention](https://en.wikipedia.org/wiki/Testing_effect). Psychological Science
 5. Tulving, E. (1972). Episodic and semantic memory. Organization of memory
+6. Dudai, Y. (2004). [The neurobiology of consolidations, or, how stable is the engram?](https://en.wikipedia.org/wiki/Memory_consolidation). Annual Review of Psychology
+7. Pashler, H., Rohrer, D., Cepeda, N. J., & Carpenter, S. K. (2007). Enhancing learning and retarding forgetting: Choices and consequences. Psychonomic Bulletin & Review
+8. Murre, J. M., & Dros, J. (2015). Replication and Analysis of Ebbinghaus' Forgetting Curve. PLOS ONE
 
