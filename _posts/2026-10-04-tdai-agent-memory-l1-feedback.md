@@ -69,18 +69,11 @@ benchmark 里有 PersonaMem，测 Agent 能不能在长期交互后正确理解�
 
 四层分好之后怎么用也有讲究：
 
-| 层级 | 使用方式 | 原因 |
-|------|---------|------|
-| L3 核心 | 直接拼进 system prompt | 稳定不变，钉死在系统提示里 |
-| L2 场景 | 直接拼进 system prompt | 相对稳定，快速恢复工作上下文 |
-| L1 原子 | 包装成只读工具，按需查询 | 易变且量大，避免 KV cache 失效 |
-| L0 原文 | 只在需要验证原文时查询 | 最详细但最重，极少直接使用 |
+L3 和 L2 直接拼进 system prompt，L1 包装成只读工具按需查询，L0 只在需要验证原文时才翻。
 
-**为什么不一起塞？**
+这么分是因为 system prompt 一动，大模型的 KV cache 就全废，每次对话的输入成本直接翻倍。稳定的东西钉死，易变的东西按需取。
 
-因为 system prompt 一动，大模型的 KV cache 就全废，每次对话的输入成本直接翻倍。稳定的东西钉死，易变的东西按需取，这个边界踩过坑的人才画得出来。
-
-## 三、记忆巩固 Pipeline
+## 记忆巩固流程
 
 想起以前看的脑科学书。人的睡眠有个过程叫记忆巩固（Memory Consolidation），白天海马体匆匆记下的短暂痕迹，会在夜里被大脑离线重放，一遍遍重组，最后沉淀成皮层里的语义知识。
 
@@ -125,14 +118,14 @@ L3 核心更新
 
 人脑不是这样的。心理学里有两个机制：
 
-1. **提取练习效应（Testing Effect）**：记忆每被成功提取一次，下次就更容易被想起来
-2. **遗忘曲线（Forgetting Curve）**：不用的记忆会自然衰减
+1. 提取练习效应（Testing Effect）：记忆每被成功提取一次，下次就更容易被想起来
+2. 遗忘曲线（Forgetting Curve）：不用的记忆会自然衰减
 
 这两个机制拧在一起，人脑才能把有限的容量留给真正重要的东西。
 
-而这套系统检索只按相似度排序。一条记忆哪怕上周刚救过 Agent，今天检索时，它跟三个月没人碰过的记忆权重一样。
+这套系统检索只按相似度排序。一条记忆哪怕上周刚救过 Agent，今天检索时，它跟三个月没人碰过的记忆权重一样。
 
-我提的 PR **#1376** 就干这个事，让 Agent 选中过的 L1 记忆被强化。
+我提的 PR #1376 就干这个事，让 Agent 选中过的 L1 记忆被强化。
 
 ![PR 1376 的页面](/assets/post_imgs/2026-10-04-tdai-memory/pr-1376.png)
 
@@ -146,12 +139,12 @@ L3 核心更新
 
 在这条记忆的原始相似度上叠两个轻量因子：
 
-1. **近因加成**：14天半衰期的指数衰减
+1. 近因加成：14天半衰期的指数衰减
    ```
    recency_factor = exp(-days_since_last_use / 14)
    ```
 
-2. **频次加成**：饱和函数，用得越多加分越多，但有上限
+2. 频次加成：饱和函数，用得越多加分越多，但有上限
    ```
    frequency_factor = tanh(use_count / 10)
    ```
@@ -161,13 +154,13 @@ L3 核心更新
 final_score = similarity * (1 + 0.1 * recency + 0.1 * frequency)
 ```
 
-注释里写了四个字：**use it or lose it**。
+注释里写了四个字：use it or lose it。
 
-### Frame Gate（时态门控）
+### Frame Gate
 
 这是后来补的。
 
-我把带强化的版本跑了三组对照实验，一百多个会话 episode，同一个模型配对测。结果出来一半在预期内：正确反馈的场景，命中率涨了 8.3 个百分点。
+我把带强化的版本跑了三组对照实验，一百多个会话，同一个模型配对测。结果出来一半在预期内：正确反馈的场景，命中率涨了 8.3 个百分点。
 
 另一半让我意外：在学过旧方案的场景里，反向暴跌 18.1 个点。
 
@@ -206,15 +199,15 @@ def should_apply_reinforcement(memory, query):
 |------|----------------|------|
 | 不带强化（基线） | 72.4% | - |
 | 只带强化 | 76.3% | +3.9% |
-| 强化 + Frame Gate | **84.2%** | **+11.8%** |
+| 强化 + Frame Gate | 84.2% | +11.8% |
 
 退化场景全部转正，两个不同的模型上方向一致。
 
 说句实话，这套基准是我自己造的合成评测，不是线上真实收益，PR 里也是这么标注的。数字看方向就好。
 
-## 五、实现拆解
+## 实现细节
 
-### 5.1 使用记录存储
+### 存储结构
 
 在 L1 原子记忆表里加了三个字段：
 
@@ -231,7 +224,7 @@ interface AtomicMemory {
 }
 ```
 
-### 5.2 确认式反馈接口
+### 确认式反馈接口
 
 新增一个 API 端点：
 
@@ -253,9 +246,9 @@ Response:
 }
 ```
 
-这个接口由 Proxy 在收到 Agent 响应后调用。Agent 通过特殊标记（如在响应中附带 `used_memory_ids`）告知 Proxy 哪些记忆真正被使用。
+这个接口由 Proxy 在收到 Agent 响应后调用。Agent 通过特殊标记告知 Proxy 哪些记忆真正被使用。
 
-### 5.3 检索重排逻辑
+### 检索重排逻辑
 
 修改 L1 检索的打分函数：
 
@@ -304,24 +297,21 @@ function checkFrameGate(memory: AtomicMemory, query: string): boolean {
 }
 ```
 
-### 5.4 Proxy 集成
+### Proxy 集成
 
 在 Proxy 层添加反馈回路：
 
 ```typescript
-// anthropicHandler.ts
 async function handleStreamResponse(stream, context) {
   const usedMemoryIds = new Set<string>();
   
   for await (const chunk of stream) {
-    // 解析 Agent 响应，识别哪些记忆被使用
     if (chunk.type === 'memory_usage') {
       chunk.memory_ids.forEach(id => usedMemoryIds.add(id));
     }
     yield chunk;
   }
   
-  // 流结束后，回写使用记录
   if (usedMemoryIds.size > 0) {
     await memoryCore.markMemoriesUsed({
       memory_ids: Array.from(usedMemoryIds),
@@ -333,18 +323,18 @@ async function handleStreamResponse(stream, context) {
 }
 ```
 
-## 六、为什么这么设计
+## 设计原理
 
-### 6.1 为什么是确认式，而不是被检索即使用？
+### 为什么是确认式，不是被检索即使用
 
 如果搜出 Top-10 就全部标记为使用，会带来两个问题：
 
-1. **噪音放大**：候选记忆也被强化，几轮后所有候选都顶着高分，区分度消失
-2. **无法反映真实价值**：Agent 看到了但没用，说明这条记忆对当前任务价值不大
+1. 噪音放大：候选记忆也被强化，几轮后所有候选都顶着高分，区分度消失
+2. 无法反映真实价值：Agent 看到了但没用，说明这条记忆对当前任务价值不大
 
 确认式反馈确保只有真正产生作用的记忆被强化。
 
-### 6.2 为什么权重只有 0.1？
+### 为什么权重只有 0.1
 
 强化是辅助信号，不是主导因素。相似度仍然是第一位的，强化只是在相似度接近时的打分器。
 
@@ -354,9 +344,9 @@ async function handleStreamResponse(stream, context) {
 
 0.1 是实验出来的平衡点：既能让常用记忆上浮，又不会掩盖语义相关性。
 
-### 6.3 为什么需要 Frame Gate？
+### 为什么需要 Frame Gate
 
-这是最关键的设计。没有它，强化机制会变成一个**正反馈陷阱**：
+这是最关键的设计。没有它，强化机制会变成一个正反馈陷阱：
 
 ```
 旧方案被使用 → 得分上升 → 更容易被检索 → 更容易被使用 → 得分继续上升
@@ -366,7 +356,7 @@ async function handleStreamResponse(stream, context) {
 
 Frame Gate 打破了这个循环：当记忆内容本身标明「这是历史」，而查询问的是「现状」，系统就暂停强化，让相似度重新主导。
 
-这对应认知科学里的**情境依赖记忆（Context-Dependent Memory）**：记忆的提取应该匹配编码时的情境，历史记忆不应该在现在式查询中获得不当优势。
+这对应认知科学里的情境依赖记忆（Context-Dependent Memory）：记忆的提取应该匹配编码时的情境，历史记忆不应该在现在式查询中获得不当优势。
 
 ## 后续方向
 
@@ -398,13 +388,13 @@ Frame Gate 打破了这个循环：当记忆内容本身标明「这是历史」
 
 1885 年，Ebbinghaus 拿自己做实验，用无意义音节，量出了人类第一条遗忘曲线。一百四十年后，一个本科生在宿舍里给一个 AI 记忆系统写衰减函数，在评论区讨论编码特异性。
 
-你在给 AI 造记忆的时候，沿着认知科学一百年走过的路又走了一遍。工作记忆、情景记忆、巩固、遗忘、再巩固，这些词一个个从教科书里跳出来，变成代码里的模块和函数。
+给 AI 造记忆的时候，沿着认知科学一百年走过的路又走了一遍。工作记忆、情景记忆、巩固、遗忘、再巩固，这些词一个个从教科书里跳出来，变成代码里的模块和函数。
 
-项目的 slogan 那句话：让 Agent 沉淀经验，让人专注创造。记忆是一个身份问题，你记得什么，你就是谁。人如此，Agent 大概也如此。
+项目的 slogan 是：让 Agent 沉淀经验，让人专注创造。记忆是一个身份问题，你记得什么，你就是谁。人如此，Agent 大概也如此。
 
 ---
 
-**参考资料**
+参考资料
 
 1. [TencentDB-Agent-Memory GitHub](https://github.com/TencentCloud/TencentDB-Agent-Memory)
 2. [PersonaMem Benchmark](https://github.com/TencentCloud/TencentDB-Agent-Memory#benchmark)
