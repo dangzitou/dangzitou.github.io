@@ -1,5 +1,5 @@
 ---
-title: "二十个 PR，九个合并，剩下的各有各的死法"
+title: "从一行 CSS 到两千行代码，我给腾讯提了二十个 PR"
 date: 2026-10-04 03:30:00 +0800
 categories: [技术]
 tags: [AI, Agent, 开源, 腾讯, Octop]
