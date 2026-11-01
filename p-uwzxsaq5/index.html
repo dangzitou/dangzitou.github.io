@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>需要密码</title>
+<style>
+:root{--bg:#f6f5f1;--paper:#fff;--ink:#1d1d1b;--ink3:#8a877f;--line:#e2dfd6;--accent:#2f5bd3;--warn:#b4471b}
+@media (prefers-color-scheme:dark){:root{--bg:#17171a;--paper:#212126;--ink:#ecebe6;--ink3:#9a988f;--line:#34343a;--accent:#7c9cf5;--warn:#f08a5d}}
+body{margin:0;min-height:100vh;display:grid;place-items:center;background:var(--bg);color:var(--ink);font:16px/1.5 -apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",sans-serif}
+form{width:min(320px,calc(100vw - 32px));background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:24px}
+h1{font-size:18px;margin:0 0 16px}
+input{box-sizing:border-box;width:100%;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+label{display:flex;gap:8px;align-items:center;margin:12px 0;font-size:14px;color:var(--ink3)}
+label input{width:auto}
+button{width:100%;font:inherit;padding:10px;border:0;border-radius:8px;background:var(--accent);color:#fff;cursor:pointer}
+#err{color:var(--warn);font-size:14px;min-height:21px;margin:8px 0 0}
+</style>
+</head>
+<body>
+<form id="f">
+<h1>需要密码</h1>
+<input id="pw" type="password" autocomplete="current-password" placeholder="密码" aria-label="密码" autofocus>
+<label><input id="rem" type="checkbox" checked>在这台设备上记住</label>
+<button type="submit">打开</button>
+<p id="err" role="alert"></p>
+</form>
+<script>
+(function(){
+  var P={"s":"f9qZRb9ceVnYQbiODrySkg==","i":"GPE7Eh5fAJv3uBPG","n":300000,"c":"RG794Lo37zVuJFJvL+o/EQaStlbuZVJKl/FHgvqu1joHBo/6v9QoJqd+EBCDpYLUNcckVsP280rSBoWuhe0xf0SFXCamiQwV7xRBAP98q2LJRch4YlqNatE1eFgxCu+lgYfYJEWDsIUL4JJMJndL6WhSCHCSFLhBFWuPNBpRfumr/AJbCW/vMC+sZ+hcy+EhAHY7pF/V1TS3UHvRhVwtrytvIechb6gO0uiBl5gI1PB5Ff9EVbOt9ZPGB6pea0fYgNf/HdElOZ1Bx/+PnB+yub5d/reO4H0pFv0i3WDbDZUJJc8towSxzUkphlLaPiKq2t1GlPrNlbml+ZzrYmWNhgM/yKFCqlgPNgCf+XOsdEWYfawpzePHV6oswJKSHRlFI5FEvM7g5KhyckzxGp6nHex+IxXGhIGLdHsiPsfro/3UfT8onNYPR6Rqeltn2BfA+EXy+ighKCe5ve/dv/aCtN7HVe1p29oXKJebpLEvuVg3OT5swGQ+zfljQFIOL93EOvzfo26PQfQPJ7UxiyxaPZ07WqKVkKOGBrMOojSxp9Nu1CwQM4x/wcfqGyvJ3iUldxEoWoE4b27mpQUDycim0+tut24Lxl2eQDXmHsAb3fcgvQdIdmRSJoRpbSlILHLmnFdTEPI/oEREiBYIEEZi0V0GHRk2ZZ+nDoBihyPUcaFz6pbpp6LNicWxFfkT8vCnpaFdr4hR0JrR1FQbD0xUp+esEhmAMXq1kd5t/4ciOjP+2R++D46vj52/EmuEvFagL5HtkaVRmdBofGllUcXsjF3Aike1MvfegD/71GemUyx46jSquhp65mM3/XIq83ksbGTE7ftk4oy3RWTxEmxWphyFUCGwTS5U2OXMgLYw0c1rbj9pGZcaF/DTtxo5I/lBx62swi9H4bwy3SQm0znXk9WVFyHCPqUD2zjXDmlPcFxg8b4ZBSIBK3+IwGK9w21qO7IWbtEyuVB/HcyV7Su2yW7+/O8tnoQk3D6h0CAAzzmt0APNBku8Tk2JB7sGAJ5saky4ZkxqBT7hx8LXbQ2ZLdENo4aPXOmH6v1I3QkQ+NZVVYHk1f3gh8dBi6rrIysoUyxCGkExVTpgk5C8ZyqCcGWbCzOUypI3smqFAi+THrok1xLPON+PsoHl3fwAygrESAkU+K9qYP6O0Dy9taoJWya737HEHrL6eaHC+8eSOTS4cb8Gdu+RM6YZx1Qn1sVjME9B4P+o6eGGyZC8ngZek5ZghKDns9R3EMT2iJRitnX0MDbVj65seshw2z0Mcisw27NJBqKcGfIQFxrjbyfpa4GSJhU2J8wXLywcrV8u5aDWKsc72uJENx5Dp4PbpWL0OgpnR0LHuK+q7FaQUftSVC3hXHsyIstZLwZffZcXvsIXZV1P+jrKAFmdg6+nZZcyDZMM+R1NxKhUUnwNaBxDooRg1C7vw9xri3OyugK0ucGRBqYyBDta8MuXj2/7xRbzQZhJiFrwlEtcOA6xdtByY5Yg++SzF7prF3+jhzkZ5A1Kf2KU3YhdFIq+7dOeV4a7SCfVP60tWLqpgxRrsQkzRw9EGGGB2ehKY8BFOCyn/r2w6USBXaWQK0XVOnWXQXPSxmmLuNvfSTDLqav+zubHqGJRD3tRvjrsvZCXGF/Tj81bqY+e+CU9fyUTMNbxsGwWGWcOLeDxx0pjRY024VDG4mbvGB+S3WfU5ox3"}, KEY='pp-key-'+P.s;
+  function b64(s){return Uint8Array.from(atob(s),function(c){return c.charCodeAt(0)});}
+  function show(raw){
+    return crypto.subtle.importKey('raw',raw,'AES-GCM',false,['decrypt']).then(function(k){
+      return crypto.subtle.decrypt({name:'AES-GCM',iv:b64(P.i)},k,b64(P.c));
+    }).then(function(buf){
+      var html=new TextDecoder().decode(buf);
+      document.open();document.write(html);document.close();
+    });
+  }
+  function derive(pw){
+    return crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveBits']).then(function(base){
+      return crypto.subtle.deriveBits({name:'PBKDF2',salt:b64(P.s),iterations:P.n,hash:'SHA-256'},base,256);
+    });
+  }
+  var saved=null; try{saved=localStorage.getItem(KEY);}catch(e){}
+  if(saved){
+    var f=document.getElementById('f'); f.style.visibility='hidden';
+    var go=function(){ show(b64(saved)).catch(function(){ try{localStorage.removeItem(KEY);}catch(e){} f.style.visibility=''; }); };
+    // 等页面加载完再替换，否则 document.write 会追加到登录页后面
+    if(document.readyState==='complete') go(); else window.addEventListener('load',go);
+  }
+  document.getElementById('f').addEventListener('submit',function(e){
+    e.preventDefault();
+    var err=document.getElementById('err'), rem=document.getElementById('rem').checked;
+    err.textContent='解密中……';
+    derive(document.getElementById('pw').value).then(function(raw){
+      if(rem){ try{ localStorage.setItem(KEY,btoa(String.fromCharCode.apply(null,new Uint8Array(raw)))); }catch(e){} }
+      return show(raw);
+    }).catch(function(){ try{localStorage.removeItem(KEY);}catch(e){} err.textContent='密码不对'; });
+  });
+})();
+</script>
+</body>
+</html>
