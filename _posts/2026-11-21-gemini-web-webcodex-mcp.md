@@ -1,9 +1,8 @@
 ---
-title: "让 Gemini 网页版连上自己的 Linux 服务器：WebCodex MCP 极简踩坑记"
+title: "Gemini 网页版通过 WebCodex 连接 Linux 服务器"
 date: 2026-11-21 12:00:00 +0800
 categories: [AI, 开发工具]
 tags: [Gemini, MCP, WebCodex, Linux, OAuth, 自托管]
-description: "直接把开头 Prompt 丢给你的 Agent 就能跑通：在 Linux 上用 WebCodex 接入 Gemini 网页版，附 3 个实测必踩的坑。"
 ---
 
 折腾 [WebCodex](https://github.com/yyjeqhc/webcodex) 把 Linux 服务器接进了 Gemini 网页版，现在直接在网页对话框里就能让 Gemini 改代码、跑脚本、推 Git。
@@ -26,9 +25,9 @@ description: "直接把开头 Prompt 丢给你的 Agent 就能跑通：在 Linux
 
 ---
 
-## 手动要点的就两步
+## 浏览器里的配置步骤
 
-Agent 把服务端和 Caddy 搞定后，剩下只能在浏览器里手动点：
+Agent 把服务端和 Caddy 搞定后，剩下在浏览器里点一下就行：
 
 1. 打开 Gemini 网页版 **Connected Apps → Custom apps**，地址填 `https://<你的域名>/mcp`。
 2. 展开 **Additional settings**，点 **Copy redirect URI** 发给 Agent（或者自己调 `/api/oauth/clients/create`），拿到 `Client ID` 和 `Client Secret` 填回去。
@@ -41,9 +40,9 @@ _在 Gemini 对话输入框中通过 `@` 选择 WebCodex。_
 
 ---
 
-## 自己手搓的话，重点避开这 3 个坑
+## 遇到的几个问题
 
-官方安装步骤直接看 [WebCodex 文档](https://github.com/yyjeqhc/webcodex/blob/main/docs/PERSONAL_SETUP.zh-CN.md) 就行，这里只说文档里没写、但接 Gemini 网页版几乎必踩的三个坑。
+官方安装步骤直接看 [WebCodex 文档](https://github.com/yyjeqhc/webcodex/blob/main/docs/PERSONAL_SETUP.zh-CN.md)，这里只记接 Gemini 网页版时实际遇到的三个问题。
 
 ### 1. 授权页报 `invalid scope`
 
