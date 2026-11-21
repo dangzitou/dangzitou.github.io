@@ -42,7 +42,18 @@ _在 Gemini 对话输入框中通过 `@` 选择 WebCodex。_
 
 ## 遇到的几个问题
 
-官方安装步骤直接看 [WebCodex 文档](https://github.com/yyjeqhc/webcodex/blob/main/docs/PERSONAL_SETUP.zh-CN.md)，这里只记接 Gemini 网页版时实际遇到的三个问题。
+官方安装步骤直接看 [WebCodex 文档](https://github.com/yyjeqhc/webcodex/blob/main/docs/PERSONAL_SETUP.zh-CN.md)，这里只记接 Gemini 网页版时实际遇到的几个问题。
+
+### 公网 IP 加 `/mcp`，Gemini 提示不支持
+
+最开始我填的是 `https://<服务器公网IP>/mcp`，Gemini 的输入框下方直接提示 `This MCP server is not yet supported.`：
+
+![Gemini 配置 MCP 时使用公网 IP 提示服务器暂不支持](/assets/images/webcodex-gemini/gemini-ip-not-supported.jpg)
+_当时使用公网 IP 添加 MCP Server 的页面。_
+
+当时通过 `curl` 验证过 IP 地址的 HTTPS 证书，匿名请求 `/mcp` 也得到了鉴权响应，所以这个提示本身不足以确定具体是哪一步不兼容。后来我为 Azure 公网 IP 设置了 DNS 标签，换成 `https://<标签>.<区域>.cloudapp.azure.com/mcp`，再配置 Caddy 证书、WebCodex 的 HTTPS issuer 和 OAuth 客户端，最终走通了连接。
+
+**处理方式**：先检查 DNS 是否解析到服务器、HTTPS 证书是否被系统信任、`/mcp` 和 OAuth 元数据是否能访问，再从 Gemini 重新发起连接。换了地址后，需要同步修改 `WEBCODEX_OAUTH2_ISSUER` 并重新配置 OAuth，回调地址以 Gemini 当时显示的值为准。Azure DNS 标签依附于 Azure 的公网 IP 资源；想以后迁云时保留同一个入口，可以使用自己控制的域名。服务器部署在中国大陆时还需确认域名备案要求。
 
 ### 1. 授权页报 `invalid scope`
 
