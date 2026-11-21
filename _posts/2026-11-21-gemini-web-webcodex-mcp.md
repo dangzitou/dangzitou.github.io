@@ -116,6 +116,9 @@ chmod 600 "$HOME/gemini-webcodex-oauth.json"
 
 ## 4. 遇到 `invalid scope`
 
+![WebCodex 授权页显示 invalid scope 错误](/assets/images/webcodex-gemini/oauth-invalid-scope.jpg)
+_WebCodex 授权页面出现的权限范围错误。_
+
 这次遇到的问题是 Gemini 请求了 Server 元数据公布的所有 scope，而预注册 OAuth client 只允许其中一部分。WebCodex 校验时因此返回 `invalid scope`。
 
 先检查 Gemini 本次请求的 scope 与该 client 的 `allowed_scopes`，不要把完整授权 URL 发到公开场所。`offline_access` 是协议级 scope，由 WebCodex 单独处理。在这次单客户端部署中，我让该域名的 OAuth 元数据只公布这个客户端允许的五项权限和 `offline_access`，然后从 Gemini **重新发起**连接。旧授权页面仍带有旧请求参数，重复提交不会更新它。
@@ -153,6 +156,9 @@ mcp.example.com {
 
 ## 5. 工具调用成功但没有数据
 
+![Gemini 对话中显示 WebCodex 工具只返回成功提示](/assets/images/webcodex-gemini/gemini-tool-output.jpg)
+_Gemini 调用工具后只看到通用成功提示时的实际页面。_
+
 接通后，我在 Gemini 里请求列出项目，工具返回了 `WebCodex tool completed successfully.`，却没有项目列表。WebCodex 默认将完整数据放在 MCP 的 `structuredContent`，而该次 Gemini 会话只向模型呈现了文本部分。
 
 WebCodex 提供兼容开关，让普通 runtime tool result 同时在 `content[0].text` 中输出 JSON：
@@ -180,6 +186,9 @@ webcodex project register --config <runner配置路径> /path/to/another-repo
 ```
 
 ## 7. 连接后如何验证
+
+![Gemini 输入框中选择 WebCodex 连接](/assets/images/webcodex-gemini/gemini-mention.jpg)
+_在 Gemini 对话输入框中通过 `@` 选择 WebCodex。_
 
 在 Gemini 中选择已连接的 WebCodex，先进行只读检查：
 
