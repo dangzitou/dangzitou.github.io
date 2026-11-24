@@ -1,0 +1,309 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 740" width="1280" height="740">
+  
+  <defs>
+    <style>
+      text { font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans CJK SC', -apple-system, BlinkMacSystemFont, sans-serif; }
+    </style>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#0F172A" flood-opacity="0.07"/>
+    </filter>
+    <filter id="shadow-sm" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0F172A" flood-opacity="0.06"/>
+    </filter>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#3B82F6"/>
+    </marker>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10B981"/>
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#7C3AED"/>
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#F97316"/>
+    </marker>
+    <marker id="arrow-rose" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#E11D48"/>
+    </marker>
+    <linearGradient id="lake-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#DBEAFE"/>
+      <stop offset="100%" stop-color="#93C5FD"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="740" rx="20" fill="#F6F7FB"/>
+
+  <!-- Header -->
+  <text x="640" y="42" text-anchor="middle" fill="#0F172A" font-size="25" font-weight="800">案例一：电商 App「刷商品 + 买外套」的 8 步数据旅程</text>
+  <text x="640" y="66" text-anchor="middle" fill="#64748B" font-size="14">离线算得全 (①→②→③→④)  +  实时反应快 (⑤→⑥→⑦)  +  长期挖得深 (⑧)</text>
+
+  <!-- STEP 1: User places order (Top Left) -->
+  
+    <g>
+      <circle cx="56" cy="110" r="13" fill="#16A34A"/>
+      <text x="56" y="115" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">1</text>
+    </g>
+    
+  <text x="78" y="116" fill="#0F172A" font-size="15.5" font-weight="800">用户下单</text>
+
+  <rect x="42" y="132" width="100" height="106" rx="12" fill="#FFFFFF" stroke="#E2E8F0" filter="url(#shadow-sm)"/>
+  
+    <g>
+      <rect x="71" y="144" width="42" height="66" rx="7" fill="#1E293B"/>
+      <rect x="74.5" y="151" width="35" height="51" rx="3" fill="#FFFFFF"/>
+      <rect x="85" y="146.5" width="14" height="2.2" rx="1" fill="#64748B"/>
+      <circle cx="92.0" cy="206" r="2.2" fill="#94A3B8"/>
+      <rect x="78" y="157" width="28" height="15" rx="2.5" fill="#FFEDD5"/>
+      <rect x="78" y="176" width="28" height="8" rx="2" fill="#F97316"/>
+      <rect x="78" y="188" width="23" height="5" rx="1.5" fill="#CBD5E1"/>
+    </g>
+    
+  <text x="92" y="228" text-anchor="middle" fill="#334155" font-size="12" font-weight="600">App 下单付款</text>
+
+  <line x1="142" y1="185" x2="180" y2="185" stroke="#475569" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrow-slate)"/>
+
+  <rect x="186" y="132" width="122" height="106" rx="12" fill="#FFFFFF" stroke="#BFDBFE" filter="url(#shadow-sm)"/>
+  
+    <g>
+      <path d="M 220.0,159.0 L 220.0,189.0 A 27.0,9 0 0,0 274.0,189.0 L 274.0,159.0 Z" fill="#3B82F6" stroke="#1D4ED8" stroke-width="1.5"/>
+      <ellipse cx="247" cy="159.0" rx="27.0" ry="9" fill="#60A5FA" stroke="#1D4ED8" stroke-width="1.5"/>
+      <path d="M 220.0,170.16 A 27.0,7.6499999999999995 0 0,0 274.0,170.16" fill="none" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="1.2"/>
+      <path d="M 220.0,183.6 A 27.0,7.6499999999999995 0 0,0 274.0,183.6" fill="none" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="1.2"/>
+    </g>
+    
+  <text x="247" y="178" text-anchor="middle" fill="#FFFFFF" font-size="11.5" font-weight="800">MySQL</text>
+  <text x="247" y="223" text-anchor="middle" fill="#1E40AF" font-size="12.5" font-weight="700">业务数据库</text>
+
+  <!-- STEP 2: Sync to Lake -->
+  
+    <g>
+      <circle cx="56" cy="276" r="13" fill="#16A34A"/>
+      <text x="56" y="281" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">2</text>
+    </g>
+    
+  <text x="78" y="282" fill="#0F172A" font-size="15.5" font-weight="800">数据同步入湖</text>
+
+  <rect x="164" y="294" width="166" height="72" rx="12" fill="#ECFDF5" stroke="#6EE7B7" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <text x="247" y="320" text-anchor="middle" fill="#065F46" font-size="12.5" font-weight="800">Flink CDC / SeaTunnel</text>
+  <text x="247" y="340" text-anchor="middle" fill="#047857" font-size="11.5">无侵入监听 Binlog</text>
+  <text x="247" y="356" text-anchor="middle" fill="#64748B" font-size="11">(告别直查线上库)</text>
+
+  <!-- Arrow MySQL -> CDC -->
+  <line x1="247" y1="238" x2="247" y2="288" stroke="#10B981" stroke-width="2.2" stroke-dasharray="5 4" marker-end="url(#arrow-green)"/>
+
+  <!-- CENTER LEFT: Unified Lakehouse Barrel (x=378..552, y=224..446) -->
+  <rect x="374" y="220" width="188" height="226" rx="16" fill="#FFFFFF" stroke="#93C5FD" stroke-width="2" filter="url(#shadow)"/>
+  <text x="468" y="248" text-anchor="middle" fill="#1D4ED8" font-size="16" font-weight="800">统一数据湖仓</text>
+  
+    <g>
+      <path d="M 414.0,286.0 L 414.0,346.0 A 54.0,13 0 0,0 522.0,346.0 L 522.0,286.0 Z" fill="url(#lake-grad)" stroke="#2563EB" stroke-width="2"/>
+      <ellipse cx="468" cy="286.0" rx="54.0" ry="13" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/>
+      <path d="M 418.0,317.72 Q 443.7,309.12 468,317.72 T 518.0,317.72 L 518.0,346.0 A 50.0,12 0 0,1 418.0,346.0 Z" fill="#3B82F6" fill-opacity="0.72"/>
+      <path d="M 420.0,330.62 Q 446.4,324.6 468,330.62 T 516.0,330.62" fill="none" stroke="#FFFFFF" stroke-opacity="0.75" stroke-width="1.8"/>
+    </g>
+    
+  <text x="468" y="382" text-anchor="middle" fill="#1E293B" font-size="12.5" font-weight="700">S3 / OSS 对象存储</text>
+  
+    <g>
+      <rect x="387.0" y="397.0" width="162" height="22" rx="11.0" fill="#DBEAFE"/>
+      <text x="468" y="411.96" text-anchor="middle" fill="#1E40AF" font-size="11" font-weight="700">Iceberg / Paimon + Catalog</text>
+    </g>
+    
+  <text x="468" y="434" text-anchor="middle" fill="#64748B" font-size="11">原始数据 &amp; 标准化资产</text>
+
+  <!-- Arrow CDC -> Lake -->
+  <path d="M 330 330 L 368 330" fill="none" stroke="#10B981" stroke-width="2.2" stroke-dasharray="5 4" marker-end="url(#arrow-green)"/>
+
+  <!-- STEP 5: Real-time Stream (Bottom Left) -->
+  
+    <g>
+      <circle cx="56" cy="434" r="13" fill="#16A34A"/>
+      <text x="56" y="439" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">5</text>
+    </g>
+    
+  <text x="78" y="440" fill="#0F172A" font-size="15.5" font-weight="800">实时采集与流计算</text>
+
+  <rect x="36" y="458" width="108" height="118" rx="12" fill="#FFFFFF" stroke="#E2E8F0" filter="url(#shadow-sm)"/>
+  
+    <g>
+      <rect x="69" y="470" width="42" height="68" rx="7" fill="#1E293B"/>
+      <rect x="72.5" y="477" width="35" height="53" rx="3" fill="#FFFFFF"/>
+      <rect x="83" y="472.5" width="14" height="2.2" rx="1" fill="#64748B"/>
+      <circle cx="90.0" cy="534" r="2.2" fill="#94A3B8"/>
+      <rect x="76" y="483" width="28" height="15" rx="2.5" fill="#FFEDD5"/>
+      <rect x="76" y="502" width="28" height="8" rx="2" fill="#3B82F6"/>
+      <rect x="76" y="514" width="23" height="5" rx="1.5" fill="#CBD5E1"/>
+    </g>
+    
+  <text x="90" y="554" text-anchor="middle" fill="#1E293B" font-size="11.5" font-weight="700">点击 / 浏览 / 加购</text>
+  <text x="90" y="569" text-anchor="middle" fill="#64748B" font-size="10.5">埋点事件流</text>
+
+  <!-- MQ box -->
+  <rect x="164" y="476" width="166" height="82" rx="12" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <text x="247" y="502" text-anchor="middle" fill="#1D4ED8" font-size="13" font-weight="800">高速事件传送带</text>
+  <text x="247" y="523" text-anchor="middle" fill="#1E293B" font-size="11.5" font-weight="600">Kafka / AutoMQ / Fluss</text>
+  
+    <g>
+      <rect x="187.0" y="534.0" width="120" height="20" rx="10.0" fill="#DBEAFE"/>
+      <text x="247" y="547.78" text-anchor="middle" fill="#1E40AF" font-size="10.5" font-weight="700">削峰填谷 · 毫秒级</text>
+    </g>
+    
+
+  <line x1="144" y1="517" x2="158" y2="517" stroke="#3B82F6" stroke-width="2.2" stroke-dasharray="5 4" marker-end="url(#arrow-blue)"/>
+
+  <!-- Flink box (Bottom Center) -->
+  <rect x="374" y="492" width="244" height="186" rx="16" fill="#FFFFFF" stroke="#FDA4AF" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="374" y="492" width="244" height="36" rx="16" fill="#FFF1F2"/>
+  <rect x="374" y="514" width="244" height="14" fill="#FFF1F2"/>
+  <text x="496" y="516" text-anchor="middle" fill="#BE123C" font-size="15" font-weight="800">Apache Flink 2.x 实时计算</text>
+
+  <rect x="392" y="542" width="98" height="56" rx="9" fill="#FFF1F2" stroke="#FECDD3"/>
+  <text x="441" y="566" text-anchor="middle" fill="#9F1239" font-size="12.5" font-weight="700">实时用户画像</text>
+  <text x="441" y="586" text-anchor="middle" fill="#64748B" font-size="10.5">刚看冲锋衣/加购</text>
+
+  <rect x="502" y="542" width="98" height="56" rx="9" fill="#FFF1F2" stroke="#FECDD3"/>
+  <text x="551" y="566" text-anchor="middle" fill="#9F1239" font-size="12.5" font-weight="700">实时销量/风控</text>
+  <text x="551" y="586" text-anchor="middle" fill="#64748B" font-size="10.5">反刷单/大屏跳数</text>
+
+  
+    <g>
+      <rect x="393.0" y="614.0" width="206" height="24" rx="12.0" fill="#FFE4E6"/>
+      <text x="496" y="629.96" text-anchor="middle" fill="#BE123C" font-size="11" font-weight="700">ForSt 状态存算分离 · 秒级产出</text>
+    </g>
+    
+  <text x="496" y="664" text-anchor="middle" fill="#64748B" font-size="11.5">同步将明细实时沉淀写入数据湖</text>
+
+  <!-- Arrow MQ -> Flink & Flink -> Lake -->
+  <path d="M 330 524 L 368 548" fill="none" stroke="#E11D48" stroke-width="2.2" marker-end="url(#arrow-rose)"/>
+  <line x1="468" y1="492" x2="468" y2="452" stroke="#3B82F6" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrow-blue)"/>
+
+  <!-- STEP 3: Offline Processing (Top Center-Right) -->
+  
+    <g>
+      <circle cx="642" cy="110" r="13" fill="#16A34A"/>
+      <text x="642" y="115" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">3</text>
+    </g>
+    
+  <text x="664" y="116" fill="#0F172A" font-size="15.5" font-weight="800">离线深加工 (次日凌晨)</text>
+
+  <rect x="630" y="132" width="286" height="218" rx="16" fill="#FFFFFF" stroke="#C4B5FD" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="630" y="132" width="286" height="36" rx="16" fill="#F5F3FF"/>
+  <rect x="630" y="154" width="286" height="14" fill="#F5F3FF"/>
+  <text x="773" y="156" text-anchor="middle" fill="#5B21B6" font-size="13.5" font-weight="800">K8s + Airflow 3 / DolphinScheduler + dbt</text>
+
+  <text x="773" y="192" text-anchor="middle" fill="#1E293B" font-size="14.5" font-weight="800">Spark 4 + Gluten (Velox) 离线计算</text>
+  
+    <g>
+      <rect x="664.0" y="206.0" width="218" height="22" rx="11.0" fill="#EDE9FE"/>
+      <text x="773" y="220.96" text-anchor="middle" fill="#6D28D9" font-size="11" font-weight="700">离在线混部省钱 · C++ 向量化提速</text>
+    </g>
+    
+
+  <rect x="646" y="242" width="80" height="62" rx="8" fill="#FAF5FF" stroke="#DDD6FE"/>
+  <text x="686" y="269" text-anchor="middle" fill="#5B21B6" font-size="12" font-weight="700">用户全量</text>
+  <text x="686" y="288" text-anchor="middle" fill="#5B21B6" font-size="12" font-weight="700">标签表</text>
+
+  <rect x="734" y="242" width="80" height="62" rx="8" fill="#FAF5FF" stroke="#DDD6FE"/>
+  <text x="774" y="269" text-anchor="middle" fill="#5B21B6" font-size="12" font-weight="700">商品销售</text>
+  <text x="774" y="288" text-anchor="middle" fill="#5B21B6" font-size="12" font-weight="700">复购指标</text>
+
+  <rect x="822" y="242" width="80" height="62" rx="8" fill="#FAF5FF" stroke="#DDD6FE"/>
+  <text x="862" y="269" text-anchor="middle" fill="#5B21B6" font-size="12" font-weight="700">订单全链路</text>
+  <text x="862" y="288" text-anchor="middle" fill="#5B21B6" font-size="12" font-weight="700">明细宽表</text>
+
+  <text x="773" y="334" text-anchor="middle" fill="#64748B" font-size="11">OpenLineage 自动上报血缘给 DataHub</text>
+
+  <!-- Bidirectional Arrow Lake <-> Spark -->
+  <path d="M 564 282 L 624 252" fill="none" stroke="#7C3AED" stroke-width="2.2" stroke-dasharray="5 4" marker-start="url(#arrow-purple)" marker-end="url(#arrow-purple)"/>
+
+  <!-- UNIFIED DATA SERVING HUB (Middle-Bottom Right: x=664..916, y=396..570) -->
+  <rect x="664" y="394" width="252" height="178" rx="16" fill="#FFFFFF" stroke="#60A5FA" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="664" y="394" width="252" height="36" rx="16" fill="#EFF6FF"/>
+  <rect x="664" y="416" width="252" height="14" fill="#EFF6FF"/>
+  <text x="790" y="418" text-anchor="middle" fill="#1D4ED8" font-size="14.5" font-weight="800">统一数据服务层 (Serving)</text>
+
+  <rect x="680" y="444" width="220" height="52" rx="9" fill="#FFF7ED" stroke="#FDBA74"/>
+  <text x="790" y="466" text-anchor="middle" fill="#9A3412" font-size="13" font-weight="700">OLAP 引擎：StarRocks / Trino</text>
+  <text x="790" y="485" text-anchor="middle" fill="#64748B" font-size="11">销售指标 API · 0.3 秒直查湖仓</text>
+
+  <rect x="680" y="506" width="220" height="52" rx="9" fill="#ECFDF5" stroke="#6EE7B7"/>
+  <text x="790" y="528" text-anchor="middle" fill="#065F46" font-size="13" font-weight="700">在线特征库：Feast / Redis</text>
+  <text x="790" y="547" text-anchor="middle" fill="#64748B" font-size="11">用户实时标签 API · 5ms 毫秒响应</text>
+
+  <!-- Arrows into Serving Hub -->
+  <line x1="773" y1="350" x2="773" y2="388" stroke="#7C3AED" stroke-width="2.2" marker-end="url(#arrow-purple)"/>
+  <path d="M 562 396 L 658 456" fill="none" stroke="#3B82F6" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrow-blue)"/>
+  <path d="M 618 552 L 658 536" fill="none" stroke="#E11D48" stroke-width="2.2" marker-end="url(#arrow-rose)"/>
+
+  <!-- RIGHT COLUMN: Final Consumption Applications (④ ⑥ ⑦ ⑧) -->
+  <!-- Step 4 -->
+  
+    <g>
+      <circle cx="1024" cy="152" r="13" fill="#16A34A"/>
+      <text x="1024" y="157" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">4</text>
+    </g>
+    
+  <text x="1046" y="158" fill="#0F172A" font-size="15" font-weight="800">离线分析</text>
+  <rect x="1010" y="172" width="234" height="76" rx="12" fill="#FFFFFF" stroke="#93C5FD" stroke-width="1.6" filter="url(#shadow-sm)"/>
+  <text x="1127" y="202" text-anchor="middle" fill="#1E40AF" font-size="14.5" font-weight="800">BI 商业经营报表</text>
+  <text x="1127" y="224" text-anchor="middle" fill="#64748B" font-size="12">看转化率 / 库存周转 / 复购趋势</text>
+
+  <!-- Step 6 -->
+  
+    <g>
+      <circle cx="1024" cy="292" r="13" fill="#16A34A"/>
+      <text x="1024" y="297" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">6</text>
+    </g>
+    
+  <text x="1046" y="298" fill="#0F172A" font-size="15" font-weight="800">在线推荐</text>
+  <rect x="1010" y="312" width="234" height="76" rx="12" fill="#FFFFFF" stroke="#6EE7B7" stroke-width="1.6" filter="url(#shadow-sm)"/>
+  <text x="1127" y="342" text-anchor="middle" fill="#065F46" font-size="14.5" font-weight="800">App 首页推荐系统</text>
+  <text x="1127" y="364" text-anchor="middle" fill="#64748B" font-size="12">下拉刷新秒换冲锋衣/户外鞋</text>
+
+  <!-- Step 7 -->
+  
+    <g>
+      <circle cx="1024" cy="432" r="13" fill="#16A34A"/>
+      <text x="1024" y="437" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">7</text>
+    </g>
+    
+  <text x="1046" y="438" fill="#0F172A" font-size="15" font-weight="800">精准营销</text>
+  <rect x="1010" y="452" width="234" height="76" rx="12" fill="#FFFFFF" stroke="#FDBA74" stroke-width="1.6" filter="url(#shadow-sm)"/>
+  <text x="1127" y="482" text-anchor="middle" fill="#9A3412" font-size="14.5" font-weight="800">实时营销发券系统</text>
+  <text x="1127" y="504" text-anchor="middle" fill="#64748B" font-size="12">加购未付款立刻弹满减优惠券</text>
+
+  <!-- Step 8 -->
+  
+    <g>
+      <circle cx="1024" cy="578" r="13" fill="#16A34A"/>
+      <text x="1024" y="583" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">8</text>
+    </g>
+    
+  <text x="1046" y="584" fill="#0F172A" font-size="15" font-weight="800">长期挖掘</text>
+  <rect x="1010" y="598" width="234" height="94" rx="12" fill="#FFFFFF" stroke="#C4B5FD" stroke-width="1.6" filter="url(#shadow-sm)"/>
+  <text x="1127" y="628" text-anchor="middle" fill="#5B21B6" font-size="14.5" font-weight="800">数据科学家 &amp; 算法建模</text>
+  <text x="1127" y="650" text-anchor="middle" fill="#64748B" font-size="12">DuckDB / Ray 直读 3 年历史湖数据</text>
+  <text x="1127" y="672" text-anchor="middle" fill="#6D28D9" font-size="11.5" font-weight="600">训练销量预测 &amp; 排序模型</text>
+
+  <!-- Arrows from Serving / Lake to ④ ⑥ ⑦ ⑧ -->
+  <path d="M 916 462 L 1004 218" fill="none" stroke="#3B82F6" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <text x="955" y="318" text-anchor="middle" fill="#1D4ED8" font-size="11.5" font-weight="700" transform="rotate(-64 955 318)">销售指标 API</text>
+
+  <path d="M 916 518 L 1004 358" fill="none" stroke="#10B981" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <text x="950" y="424" text-anchor="middle" fill="#047857" font-size="11.5" font-weight="700" transform="rotate(-61 950 424)">实时标签 API</text>
+
+  <path d="M 916 538 L 1004 494" fill="none" stroke="#F97316" stroke-width="2" marker-end="url(#arrow-orange)"/>
+  <text x="956" y="502" text-anchor="middle" fill="#C2410C" font-size="11" font-weight="700" transform="rotate(-26 956 502)">实时标签</text>
+
+  <!-- Long curve from Lakehouse to Step 8 (going cleanly in gap x=352 and below Flink y=708) -->
+  <path d="M 384 446 C 358 462, 352 478, 352 510 L 352 688 C 352 706, 366 710, 390 710 L 952 710 C 978 710, 990 662, 1004 652" fill="none" stroke="#7C3AED" stroke-width="2.2" stroke-dasharray="6 4" marker-end="url(#arrow-purple)"/>
+  
+    <g>
+      <rect x="604.0" y="699.0" width="232" height="22" rx="11.0" fill="#EDE9FE"/>
+      <text x="720" y="713.96" text-anchor="middle" fill="#6D28D9" font-size="11" font-weight="700">零拷贝直读历史全量湖仓数据</text>
+    </g>
+    
+</svg>

@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 680" width="1280" height="680">
+  
+  <defs>
+    <style>
+      text { font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans CJK SC', -apple-system, BlinkMacSystemFont, sans-serif; }
+    </style>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#0F172A" flood-opacity="0.07"/>
+    </filter>
+    <filter id="shadow-sm" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0F172A" flood-opacity="0.06"/>
+    </filter>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#3B82F6"/>
+    </marker>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10B981"/>
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#7C3AED"/>
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#F97316"/>
+    </marker>
+    <marker id="arrow-rose" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#E11D48"/>
+    </marker>
+    <linearGradient id="lake-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#DBEAFE"/>
+      <stop offset="100%" stop-color="#93C5FD"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="680" rx="20" fill="#F4F6FA"/>
+
+  <text x="640" y="42" text-anchor="middle" fill="#0F172A" font-size="25" font-weight="800">2026 Data Infra 三大底层破局原理对照图</text>
+  <text x="640" y="66" text-anchor="middle" fill="#64748B" font-size="14">为什么老架构又贵又慢？一张图看懂无盘化、湖仓四层与 Native 向量化是怎么把成本打下来的</text>
+
+  <!-- PANEL 1: Diskless Kafka vs Traditional Kafka (Top Left) -->
+  <rect x="36" y="92" width="596" height="274" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="36" y="92" width="596" height="42" rx="16" fill="#EFF6FF"/>
+  <rect x="36" y="118" width="596" height="16" fill="#EFF6FF"/>
+  <text x="334" y="119" text-anchor="middle" fill="#1E40AF" font-size="15.5" font-weight="800">破局一：消息队列告别本地盘 (Diskless Kafka)</text>
+
+  <!-- Left sub: Legacy Kafka -->
+  <rect x="54" y="148" width="256" height="198" rx="12" fill="#FEF2F2" stroke="#FECACA"/>
+  <text x="182" y="172" text-anchor="middle" fill="#991B1B" font-size="13.5" font-weight="800">传统 Kafka (三副本本地盘)</text>
+  <rect x="68" y="186" width="66" height="58" rx="8" fill="#FFFFFF" stroke="#FCA5A5"/>
+  <text x="101" y="210" text-anchor="middle" fill="#1E293B" font-size="11.5" font-weight="700">机房 A</text>
+  <text x="101" y="229" text-anchor="middle" fill="#64748B" font-size="10.5">本地云盘</text>
+  <rect x="149" y="186" width="66" height="58" rx="8" fill="#FFFFFF" stroke="#FCA5A5"/>
+  <text x="182" y="210" text-anchor="middle" fill="#1E293B" font-size="11.5" font-weight="700">机房 B</text>
+  <text x="182" y="229" text-anchor="middle" fill="#64748B" font-size="10.5">副本同步</text>
+  <rect x="230" y="186" width="66" height="58" rx="8" fill="#FFFFFF" stroke="#FCA5A5"/>
+  <text x="263" y="210" text-anchor="middle" fill="#1E293B" font-size="11.5" font-weight="700">机房 C</text>
+  <text x="263" y="229" text-anchor="middle" fill="#64748B" font-size="10.5">副本同步</text>
+  <line x1="134" y1="215" x2="147" y2="215" stroke="#E11D48" stroke-width="2" marker-end="url(#arrow-rose)"/>
+  <line x1="215" y1="215" x2="228" y2="215" stroke="#E11D48" stroke-width="2" marker-end="url(#arrow-rose)"/>
+  
+    <g>
+      <rect x="70.0" y="262.0" width="224" height="24" rx="12.0" fill="#FEE2E2"/>
+      <text x="182" y="277.96" text-anchor="middle" fill="#BE123C" font-size="11" font-weight="700">跨机房流量费天价 · 扩容搬数数小时</text>
+    </g>
+    
+  <text x="182" y="324" text-anchor="middle" fill="#7F1D1D" font-size="11.5">每写 1MB 付 3 倍硬盘 + 跨 AZ 流量费</text>
+
+  <!-- Right sub: 2026 Diskless -->
+  <rect x="326" y="148" width="288" height="198" rx="12" fill="#ECFDF5" stroke="#A7F3D0"/>
+  <text x="470" y="172" text-anchor="middle" fill="#065F46" font-size="13.5" font-weight="800">2026 AutoMQ / KIP-1150</text>
+  <rect x="348" y="186" width="112" height="44" rx="8" fill="#FFFFFF" stroke="#6EE7B7"/>
+  <text x="404" y="206" text-anchor="middle" fill="#1E293B" font-size="11.5" font-weight="700">无状态 Broker</text>
+  <text x="404" y="222" text-anchor="middle" fill="#047857" font-size="10">秒级扩缩容</text>
+  <rect x="480" y="186" width="112" height="44" rx="8" fill="#FFFFFF" stroke="#6EE7B7"/>
+  <text x="536" y="206" text-anchor="middle" fill="#1E293B" font-size="11.5" font-weight="700">无状态 Broker</text>
+  <text x="536" y="222" text-anchor="middle" fill="#047857" font-size="10">不存本地盘</text>
+  <line x1="404" y1="230" x2="445" y2="256" stroke="#10B981" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <line x1="536" y1="230" x2="495" y2="256" stroke="#10B981" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <rect x="364" y="260" width="212" height="38" rx="8" fill="#2563EB"/>
+  <text x="470" y="284" text-anchor="middle" fill="#FFFFFF" font-size="12.5" font-weight="700">直写 S3 / OSS 对象存储</text>
+  
+    <g>
+      <rect x="354.0" y="310.0" width="232" height="24" rx="12.0" fill="#D1FAE5"/>
+      <text x="470" y="326.14" text-anchor="middle" fill="#065F46" font-size="11.5" font-weight="700">跨 AZ 0 流量费 · 云成本直降 80%</text>
+    </g>
+    
+
+  <!-- PANEL 2: Library 4-Layer Lakehouse (Top Right) -->
+  <rect x="648" y="92" width="596" height="274" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="648" y="92" width="596" height="42" rx="16" fill="#ECFDF5"/>
+  <rect x="648" y="118" width="596" height="16" fill="#ECFDF5"/>
+  <text x="946" y="119" text-anchor="middle" fill="#065F46" font-size="15.5" font-weight="800">破局二：湖仓存储「图书馆四小层」</text>
+
+  <rect x="674" y="148" width="544" height="42" rx="9" fill="#FEF3C7" stroke="#FCD34D"/>
+  <text x="692" y="174" fill="#92400E" font-size="13" font-weight="800">4. 总前台门禁 (Catalog)</text>
+  <text x="1200" y="174" text-anchor="end" fill="#78350F" font-size="12.5" font-weight="600">Polaris / Unity Catalog / Gravitino</text>
+
+  <rect x="674" y="198" width="544" height="42" rx="9" fill="#DBEAFE" stroke="#93C5FD"/>
+  <text x="692" y="224" fill="#1E40AF" font-size="13" font-weight="800">3. 事务登记簿 (表格式)</text>
+  <text x="1200" y="224" text-anchor="end" fill="#1E3A8A" font-size="12.5" font-weight="600">Iceberg (通用) / Paimon (实时流)</text>
+
+  <rect x="674" y="248" width="544" height="42" rx="9" fill="#FFEDD5" stroke="#FDBA74"/>
+  <text x="692" y="274" fill="#9A3412" font-size="13" font-weight="800">2. 书本排版 (文件格式)</text>
+  <text x="1200" y="274" text-anchor="end" fill="#7C2D12" font-size="12.5" font-weight="600">Parquet (表分析) | Lance (AI 快 100x)</text>
+
+  <rect x="674" y="298" width="544" height="42" rx="9" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="692" y="324" fill="#334155" font-size="13" font-weight="800">1. 图书馆大楼 (物理存储)</text>
+  <text x="1200" y="324" text-anchor="end" fill="#1E293B" font-size="12.5" font-weight="600">AWS S3 / 阿里云 OSS / GCS (无限廉价)</text>
+
+  <!-- PANEL 3: Spark Native Vectorization + Remote Shuffle (Bottom Full Width) -->
+  <rect x="36" y="388" width="1208" height="266" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="36" y="388" width="1208" height="42" rx="16" fill="#F5F3FF"/>
+  <rect x="36" y="414" width="1208" height="16" fill="#F5F3FF"/>
+  <text x="640" y="415" text-anchor="middle" fill="#5B21B6" font-size="15.5" font-weight="800">破局三：批计算「逃离 JVM」Native 向量化 + 远程 Shuffle 解耦</text>
+
+  <!-- Left: Legacy Spark -->
+  <rect x="60" y="448" width="510" height="186" rx="14" fill="#FEF2F2" stroke="#FECACA"/>
+  <text x="315" y="476" text-anchor="middle" fill="#991B1B" font-size="14.5" font-weight="800">传统 Spark (纯 JVM + 本地盘 Shuffle)</text>
+
+  <rect x="84" y="492" width="214" height="72" rx="10" fill="#FFFFFF" stroke="#FCA5A5"/>
+  <text x="191" y="518" text-anchor="middle" fill="#1E293B" font-size="13" font-weight="700">Java 虚拟机逐行计算</text>
+  <text x="191" y="542" text-anchor="middle" fill="#BE123C" font-size="11.5">GC 卡顿 + 难吃满 CPU SIMD</text>
+
+  <rect x="328" y="492" width="218" height="72" rx="10" fill="#FFFFFF" stroke="#FCA5A5"/>
+  <text x="437" y="518" text-anchor="middle" fill="#1E293B" font-size="13" font-weight="700">Shuffle 写本地临时盘</text>
+  <text x="437" y="542" text-anchor="middle" fill="#BE123C" font-size="11.5">K8s 缩容易丢数据 / 爆盘</text>
+
+  <line x1="298" y1="528" x2="322" y2="528" stroke="#E11D48" stroke-width="2" marker-end="url(#arrow-rose)"/>
+  
+    <g>
+      <rect x="135.0" y="589.0" width="360" height="26" rx="13.0" fill="#FEE2E2"/>
+      <text x="315" y="606.32" text-anchor="middle" fill="#BE123C" font-size="12" font-weight="700">瓶颈：CPU 浪费严重 · 云上弹性扩缩容不稳定</text>
+    </g>
+    
+
+  <!-- Big Center Arrow -->
+  <line x1="582" y1="540" x2="646" y2="540" stroke="#7C3AED" stroke-width="4" marker-end="url(#arrow-purple)"/>
+  
+    <g>
+      <rect x="578.0" y="496.0" width="72" height="24" rx="12.0" fill="#7C3AED"/>
+      <text x="614" y="511.96" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="700">2026 升级</text>
+    </g>
+    
+
+  <!-- Right: 2026 Spark Native + RSS -->
+  <rect x="662" y="448" width="558" height="186" rx="14" fill="#F0FDF4" stroke="#86EFAC"/>
+  <text x="941" y="476" text-anchor="middle" fill="#166534" font-size="14.5" font-weight="800">2026 Spark 4 + Native 向量化 + 远程 Shuffle</text>
+
+  <rect x="684" y="492" width="154" height="72" rx="10" fill="#FFFFFF" stroke="#86EFAC"/>
+  <text x="761" y="516" text-anchor="middle" fill="#5B21B6" font-size="13" font-weight="800">Spark 大脑</text>
+  <text x="761" y="538" text-anchor="middle" fill="#475569" font-size="11">Catalyst 优化器</text>
+  <text x="761" y="554" text-anchor="middle" fill="#475569" font-size="11">&amp; 分布式调度</text>
+
+  <rect x="858" y="492" width="176" height="72" rx="10" fill="#ECFDF5" stroke="#34D399" stroke-width="1.5"/>
+  <text x="946" y="516" text-anchor="middle" fill="#065F46" font-size="13" font-weight="800">C++ / Rust 肌肉</text>
+  <text x="946" y="538" text-anchor="middle" fill="#1E293B" font-size="11.5" font-weight="600">Gluten (Velox) / Comet</text>
+  <text x="946" y="554" text-anchor="middle" fill="#047857" font-size="10.5">SIMD 向量化 + Arrow 零拷贝</text>
+
+  <rect x="1054" y="492" width="144" height="72" rx="10" fill="#EFF6FF" stroke="#60A5FA" stroke-width="1.5"/>
+  <text x="1126" y="516" text-anchor="middle" fill="#1D4ED8" font-size="13" font-weight="800">远程 Shuffle</text>
+  <text x="1126" y="538" text-anchor="middle" fill="#1E293B" font-size="11.5" font-weight="600">Celeborn / Uniffle</text>
+  <text x="1126" y="554" text-anchor="middle" fill="#1D4ED8" font-size="10.5">计算容器彻底无状态</text>
+
+  <line x1="838" y1="528" x2="852" y2="528" stroke="#10B981" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <line x1="1034" y1="528" x2="1048" y2="528" stroke="#3B82F6" stroke-width="2" marker-end="url(#arrow-blue)"/>
+
+  
+    <g>
+      <rect x="726.0" y="589.0" width="430" height="26" rx="13.0" fill="#D1FAE5"/>
+      <text x="941" y="606.32" text-anchor="middle" fill="#065F46" font-size="12" font-weight="700">效果：分析任务提速 2~5 倍 · K8s 弹性伸缩稳如磐石</text>
+    </g>
+    
+</svg>

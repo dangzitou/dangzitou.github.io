@@ -1,0 +1,220 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 780" width="1280" height="780">
+  
+  <defs>
+    <style>
+      text { font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans CJK SC', -apple-system, BlinkMacSystemFont, sans-serif; }
+    </style>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#0F172A" flood-opacity="0.07"/>
+    </filter>
+    <filter id="shadow-sm" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0F172A" flood-opacity="0.06"/>
+    </filter>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#3B82F6"/>
+    </marker>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10B981"/>
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#7C3AED"/>
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#F97316"/>
+    </marker>
+    <marker id="arrow-rose" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#E11D48"/>
+    </marker>
+    <linearGradient id="lake-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#DBEAFE"/>
+      <stop offset="100%" stop-color="#93C5FD"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="780" rx="20" fill="#F4F6FA"/>
+
+  <!-- Title -->
+  <text x="640" y="44" text-anchor="middle" fill="#0F172A" font-size="26" font-weight="800">2026 现代 Data Infra 六层全景架构图</text>
+  <text x="640" y="70" text-anchor="middle" fill="#64748B" font-size="14">从数据源头到 BI / 推荐 / 大模型闭环：云原生湖仓一体 + Native 加速 + AI 多模态</text>
+
+  <!-- Main 5 horizontal tiers on left (x=36..970) -->
+
+  <!-- Row 0: Data Sources (y=92, h=76) -->
+  <rect x="36" y="92" width="944" height="78" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <rect x="36" y="92" width="116" height="78" rx="14" fill="#475569"/>
+  <rect x="136" y="92" width="16" height="78" fill="#475569"/>
+  <text x="94" y="126" text-anchor="middle" fill="#FFFFFF" font-size="15" font-weight="700">0. 数据源头</text>
+  <text x="94" y="148" text-anchor="middle" fill="#CBD5E1" font-size="11">Data Sources</text>
+
+  <rect x="172" y="106" width="246" height="50" rx="10" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="295" y="127" text-anchor="middle" fill="#1E293B" font-size="13.5" font-weight="700">业务数据库 (OLTP)</text>
+  <text x="295" y="146" text-anchor="middle" fill="#64748B" font-size="12">MySQL / PostgreSQL / MongoDB</text>
+
+  <rect x="434" y="106" width="246" height="50" rx="10" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="557" y="127" text-anchor="middle" fill="#1E293B" font-size="13.5" font-weight="700">用户埋点与日志</text>
+  <text x="557" y="146" text-anchor="middle" fill="#64748B" font-size="12">App 点击 / 浏览 / 服务端日志</text>
+
+  <rect x="696" y="106" width="268" height="50" rx="10" fill="#FFF7ED" stroke="#FED7AA"/>
+  <text x="830" y="127" text-anchor="middle" fill="#9A3412" font-size="13.5" font-weight="700">多模态与 AI 语料</text>
+  <text x="830" y="146" text-anchor="middle" fill="#C2410C" font-size="12">车端视频 / 点云 / 音频 / 网页 PDF</text>
+
+  <!-- Arrow 0->1 -->
+  <line x1="508" y1="170" x2="508" y2="196" stroke="#3B82F6" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+
+  <!-- Row 1: Ingestion & Streaming Storage (y=200, h=96) -->
+  <rect x="36" y="200" width="944" height="96" rx="14" fill="#FFFFFF" stroke="#93C5FD" stroke-width="1.8" filter="url(#shadow-sm)"/>
+  <rect x="36" y="200" width="116" height="96" rx="14" fill="#2563EB"/>
+  <rect x="136" y="200" width="16" height="96" fill="#2563EB"/>
+  <text x="94" y="242" text-anchor="middle" fill="#FFFFFF" font-size="15" font-weight="700">1. 采与运</text>
+  <text x="94" y="264" text-anchor="middle" fill="#DBEAFE" font-size="11">集成与流存储</text>
+
+  <rect x="172" y="214" width="246" height="68" rx="10" fill="#EFF6FF" stroke="#BFDBFE"/>
+  <text x="295" y="236" text-anchor="middle" fill="#1E40AF" font-size="13.5" font-weight="700">数据同步 &amp; CDC</text>
+  <text x="295" y="256" text-anchor="middle" fill="#1E293B" font-size="12.5" font-weight="600">Flink CDC 3.x / SeaTunnel</text>
+  <text x="295" y="273" text-anchor="middle" fill="#64748B" font-size="11">DataX / Debezium / 自动 Schema 演化</text>
+
+  <rect x="434" y="214" width="268" height="68" rx="10" fill="#EFF6FF" stroke="#BFDBFE"/>
+  <text x="568" y="236" text-anchor="middle" fill="#1E40AF" font-size="13.5" font-weight="700">消息总线 (Diskless 无盘化)</text>
+  <text x="568" y="256" text-anchor="middle" fill="#1E293B" font-size="12.5" font-weight="600">Kafka (KIP-1150) / AutoMQ</text>
+  <text x="568" y="273" text-anchor="middle" fill="#64748B" font-size="11">WarpStream / 直写对象存储省跨 AZ 流量</text>
+
+  <rect x="718" y="214" width="246" height="68" rx="10" fill="#ECFDF5" stroke="#A7F3D0"/>
+  <text x="841" y="236" text-anchor="middle" fill="#065F46" font-size="13.5" font-weight="700">湖仓列存流存储 (新物种)</text>
+  <text x="841" y="256" text-anchor="middle" fill="#1E293B" font-size="12.5" font-weight="600">Apache Fluss</text>
+  <text x="841" y="273" text-anchor="middle" fill="#047857" font-size="11">Arrow 列裁剪 + 主键更新 + 自动沉降湖仓</text>
+
+  <!-- Arrow 1->2 -->
+  <line x1="508" y1="296" x2="508" y2="322" stroke="#3B82F6" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+
+  <!-- Row 2: Storage & Open Lakehouse (y=326, h=116) -->
+  <rect x="36" y="326" width="944" height="116" rx="14" fill="#FFFFFF" stroke="#6EE7B7" stroke-width="1.8" filter="url(#shadow-sm)"/>
+  <rect x="36" y="326" width="116" height="116" rx="14" fill="#059669"/>
+  <rect x="136" y="326" width="16" height="116" fill="#059669"/>
+  <text x="94" y="378" text-anchor="middle" fill="#FFFFFF" font-size="15" font-weight="700">2. 存与表</text>
+  <text x="94" y="400" text-anchor="middle" fill="#D1FAE5" font-size="11">湖仓与目录</text>
+
+  <!-- Top bar inside Storage: Unified Catalog -->
+  <rect x="172" y="338" width="792" height="34" rx="8" fill="#FEF3C7" stroke="#FCD34D"/>
+  <text x="568" y="360" text-anchor="middle" fill="#92400E" font-size="13" font-weight="700">统一 Catalog 控制面 (总前台与门禁)：Apache Polaris  |  Unity Catalog  |  Apache Gravitino</text>
+
+  <!-- Bottom 3 boxes inside Storage -->
+  <rect x="172" y="380" width="256" height="50" rx="9" fill="#ECFDF5" stroke="#A7F3D0"/>
+  <text x="300" y="401" text-anchor="middle" fill="#065F46" font-size="13" font-weight="700">开放表格式 (事务与快照)</text>
+  <text x="300" y="420" text-anchor="middle" fill="#1E293B" font-size="12">Iceberg / Paimon / Delta / Hudi</text>
+
+  <rect x="442" y="380" width="268" height="50" rx="9" fill="#FFF7ED" stroke="#FED7AA"/>
+  <text x="576" y="401" text-anchor="middle" fill="#9A3412" font-size="13" font-weight="700">文件格式 (表格 + AI 原生)</text>
+  <text x="576" y="420" text-anchor="middle" fill="#1E293B" font-size="12">Parquet / ORC  |  Lance / Vortex</text>
+
+  <rect x="724" y="380" width="240" height="50" rx="9" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="844" y="401" text-anchor="middle" fill="#334155" font-size="13" font-weight="700">云对象存储底座 (存算分离)</text>
+  <text x="844" y="420" text-anchor="middle" fill="#1E293B" font-size="12">AWS S3 / 阿里云 OSS / GCS</text>
+
+  <!-- Bidirectional Arrow 2<->3 -->
+  <line x1="508" y1="444" x2="508" y2="468" stroke="#7C3AED" stroke-width="2.5" marker-start="url(#arrow-purple)" marker-end="url(#arrow-purple)"/>
+
+  <!-- Row 3: Compute Layer (y=472, h=106) -->
+  <rect x="36" y="472" width="944" height="106" rx="14" fill="#FFFFFF" stroke="#C4B5FD" stroke-width="1.8" filter="url(#shadow-sm)"/>
+  <rect x="36" y="472" width="116" height="106" rx="14" fill="#7C3AED"/>
+  <rect x="136" y="472" width="16" height="106" fill="#7C3AED"/>
+  <text x="94" y="518" text-anchor="middle" fill="#FFFFFF" font-size="15" font-weight="700">3. 算 (引擎)</text>
+  <text x="94" y="540" text-anchor="middle" fill="#EDE9FE" font-size="11">流 / 批 / AI</text>
+
+  <rect x="172" y="486" width="206" height="78" rx="10" fill="#F5F3FF" stroke="#DDD6FE"/>
+  <text x="275" y="508" text-anchor="middle" fill="#5B21B6" font-size="13" font-weight="700">流计算 &amp; 流式 Agent</text>
+  <text x="275" y="529" text-anchor="middle" fill="#1E293B" font-size="12.5" font-weight="600">Flink 2.x (ForSt+AEC)</text>
+  <text x="275" y="549" text-anchor="middle" fill="#6D28D9" font-size="11.5">Apache Flink Agents</text>
+
+  <rect x="392" y="486" width="224" height="78" rx="10" fill="#F5F3FF" stroke="#DDD6FE"/>
+  <text x="504" y="508" text-anchor="middle" fill="#5B21B6" font-size="13" font-weight="700">批计算 Native 向量化</text>
+  <text x="504" y="529" text-anchor="middle" fill="#1E293B" font-size="12.5" font-weight="600">Spark 4 + Gluten (Velox)</text>
+  <text x="504" y="549" text-anchor="middle" fill="#64748B" font-size="11.5">Comet (Rust DataFusion)</text>
+
+  <rect x="630" y="486" width="162" height="78" rx="10" fill="#F8FAFC" stroke="#CBD5E1"/>
+  <text x="711" y="508" text-anchor="middle" fill="#334155" font-size="13" font-weight="700">Shuffle &amp; 单机</text>
+  <text x="711" y="529" text-anchor="middle" fill="#1E293B" font-size="12.5" font-weight="600">Celeborn / Uniffle</text>
+  <text x="711" y="549" text-anchor="middle" fill="#64748B" font-size="11.5">DuckDB (100GB内秒杀)</text>
+
+  <rect x="806" y="486" width="158" height="78" rx="10" fill="#FFF7ED" stroke="#FDBA74"/>
+  <text x="885" y="508" text-anchor="middle" fill="#9A3412" font-size="13" font-weight="700">AI 多模态计算</text>
+  <text x="885" y="529" text-anchor="middle" fill="#1E293B" font-size="12.5" font-weight="600">Ray Data / Daft</text>
+  <text x="885" y="549" text-anchor="middle" fill="#C2410C" font-size="11.5">CPU+GPU 异构流水线</text>
+
+  <!-- Arrow 3->4 -->
+  <line x1="508" y1="578" x2="508" y2="604" stroke="#F97316" stroke-width="2.5" marker-end="url(#arrow-orange)"/>
+
+  <!-- Row 4: Serving + Consumption (y=608, h=144) -->
+  <rect x="36" y="608" width="944" height="144" rx="14" fill="#FFFFFF" stroke="#FDBA74" stroke-width="1.8" filter="url(#shadow-sm)"/>
+  <rect x="36" y="608" width="116" height="144" rx="14" fill="#EA580C"/>
+  <rect x="136" y="608" width="16" height="144" fill="#EA580C"/>
+  <text x="94" y="672" text-anchor="middle" fill="#FFFFFF" font-size="15" font-weight="700">4. 查与用</text>
+  <text x="94" y="694" text-anchor="middle" fill="#FFEDD5" font-size="11">服务与业务闭环</text>
+
+  <!-- Serving row -->
+  <rect x="172" y="620" width="256" height="54" rx="9" fill="#FFF7ED" stroke="#FED7AA"/>
+  <text x="300" y="641" text-anchor="middle" fill="#9A3412" font-size="13" font-weight="700">存算分离 OLAP / 湖仓直查</text>
+  <text x="300" y="661" text-anchor="middle" fill="#1E293B" font-size="12">StarRocks / Doris / ClickHouse / Trino</text>
+
+  <rect x="442" y="620" width="248" height="54" rx="9" fill="#FFF7ED" stroke="#FED7AA"/>
+  <text x="566" y="641" text-anchor="middle" fill="#9A3412" font-size="13" font-weight="700">在线特征库 &amp; 低延迟 KV</text>
+  <text x="566" y="661" text-anchor="middle" fill="#1E293B" font-size="12">Feast / Redis (防特征穿越)</text>
+
+  <rect x="704" y="620" width="260" height="54" rx="9" fill="#FEF2F2" stroke="#FECACA"/>
+  <text x="834" y="641" text-anchor="middle" fill="#9F1239" font-size="13" font-weight="700">向量与混合检索记忆库</text>
+  <text x="834" y="661" text-anchor="middle" fill="#1E293B" font-size="12">Milvus / Qdrant / LanceDB</text>
+
+  <!-- Consumption row -->
+  <rect x="172" y="688" width="256" height="48" rx="9" fill="#F8FAFC" stroke="#CBD5E1"/>
+  <text x="300" y="717" text-anchor="middle" fill="#0F172A" font-size="13" font-weight="700">BI 报表 / 实时经营大屏</text>
+
+  <rect x="442" y="688" width="248" height="48" rx="9" fill="#F8FAFC" stroke="#CBD5E1"/>
+  <text x="566" y="717" text-anchor="middle" fill="#0F172A" font-size="13" font-weight="700">实时风控 / 在线推荐 / 精准营销</text>
+
+  <rect x="704" y="688" width="260" height="48" rx="9" fill="#FFF1F2" stroke="#FDA4AF"/>
+  <text x="834" y="717" text-anchor="middle" fill="#9F1239" font-size="13" font-weight="700">LLM 语料飞轮 / 智驾闭环 / 在线 Agent</text>
+
+  <!-- Right Side Pillar: Layer 5 Governance & Cloud-Native Platform (x=1004..1244, y=92..752) -->
+  <rect x="1004" y="92" width="240" height="660" rx="16" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="1004" y="92" width="240" height="56" rx="16" fill="#0F172A"/>
+  <rect x="1004" y="132" width="240" height="16" fill="#0F172A"/>
+  <text x="1124" y="122" text-anchor="middle" fill="#FFFFFF" font-size="15" font-weight="700">5. 管与云原生底盘</text>
+  <text x="1124" y="140" text-anchor="middle" fill="#94A3B8" font-size="11">贯穿全栈的横切基础设施</text>
+
+  <!-- Card 5.1 -->
+  <rect x="1020" y="168" width="208" height="162" rx="12" fill="#F0F9FF" stroke="#BAE6FD"/>
+  <text x="1124" y="194" text-anchor="middle" fill="#0369A1" font-size="14" font-weight="700">任务编排 &amp; SQL 工程化</text>
+  <line x1="1040" y1="206" x2="1208" y2="206" stroke="#BAE6FD"/>
+  <text x="1124" y="230" text-anchor="middle" fill="#1E293B" font-size="13" font-weight="600">Apache Airflow 3</text>
+  <text x="1124" y="254" text-anchor="middle" fill="#1E293B" font-size="13" font-weight="600">Dagster / DolphinScheduler</text>
+  <text x="1124" y="278" text-anchor="middle" fill="#0369A1" font-size="13" font-weight="700">dbt (SQL 建模与测试)</text>
+  <text x="1124" y="308" text-anchor="middle" fill="#64748B" font-size="11.5">管住几万个 DAG 任务依赖顺序</text>
+
+  <!-- Card 5.2 -->
+  <rect x="1020" y="348" width="208" height="174" rx="12" fill="#F0FDF4" stroke="#BBF7D0"/>
+  <text x="1124" y="374" text-anchor="middle" fill="#15803D" font-size="14" font-weight="700">数据治理、血缘与 FinOps</text>
+  <line x1="1040" y1="386" x2="1208" y2="386" stroke="#BBF7D0"/>
+  <text x="1124" y="410" text-anchor="middle" fill="#1E293B" font-size="13" font-weight="600">OpenLineage (血缘标准)</text>
+  <text x="1124" y="434" text-anchor="middle" fill="#1E293B" font-size="13" font-weight="600">DataHub / OpenMetadata</text>
+  <text x="1124" y="458" text-anchor="middle" fill="#15803D" font-size="13" font-weight="700">FinOps 成本精细归因</text>
+  <text x="1124" y="486" text-anchor="middle" fill="#64748B" font-size="11.5">列级血缘 / 数据质量 / PII 合规</text>
+  <text x="1124" y="505" text-anchor="middle" fill="#64748B" font-size="11.5">自动清理僵尸表与冷热分层</text>
+
+  <!-- Card 5.3 -->
+  <rect x="1020" y="540" width="208" height="194" rx="12" fill="#FAF5FF" stroke="#E9D5FF"/>
+  <text x="1124" y="566" text-anchor="middle" fill="#6B21A8" font-size="14" font-weight="700">云原生算力调度底盘</text>
+  <line x1="1040" y1="578" x2="1208" y2="578" stroke="#E9D5FF"/>
+  <text x="1124" y="602" text-anchor="middle" fill="#1E293B" font-size="13.5" font-weight="700">Kubernetes (K8s)</text>
+  <text x="1124" y="628" text-anchor="middle" fill="#6B21A8" font-size="13" font-weight="600">Volcano / Apache YuniKorn</text>
+  <text x="1124" y="654" text-anchor="middle" fill="#1E293B" font-size="12.5" font-weight="600">Flink / Spark Operators</text>
+  <text x="1124" y="684" text-anchor="middle" fill="#64748B" font-size="11.5">Gang 成组调度 + GPU 拓扑</text>
+  <text x="1124" y="704" text-anchor="middle" fill="#64748B" font-size="11.5">离在线混部压榨 CPU 利用率</text>
+
+  <!-- Dashed connectors between right pillar and main layers -->
+  <line x1="980" y1="248" x2="1004" y2="248" stroke="#94A3B8" stroke-width="2" stroke-dasharray="4 3"/>
+  <line x1="980" y1="384" x2="1004" y2="384" stroke="#94A3B8" stroke-width="2" stroke-dasharray="4 3"/>
+  <line x1="980" y1="525" x2="1004" y2="525" stroke="#94A3B8" stroke-width="2" stroke-dasharray="4 3"/>
+  <line x1="980" y1="680" x2="1004" y2="680" stroke="#94A3B8" stroke-width="2" stroke-dasharray="4 3"/>
+</svg>

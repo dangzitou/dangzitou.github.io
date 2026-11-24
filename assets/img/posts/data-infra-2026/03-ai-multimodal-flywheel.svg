@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 620" width="1280" height="620">
+  
+  <defs>
+    <style>
+      text { font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans CJK SC', -apple-system, BlinkMacSystemFont, sans-serif; }
+    </style>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#0F172A" flood-opacity="0.07"/>
+    </filter>
+    <filter id="shadow-sm" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0F172A" flood-opacity="0.06"/>
+    </filter>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#3B82F6"/>
+    </marker>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10B981"/>
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#7C3AED"/>
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#F97316"/>
+    </marker>
+    <marker id="arrow-rose" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#E11D48"/>
+    </marker>
+    <linearGradient id="lake-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#DBEAFE"/>
+      <stop offset="100%" stop-color="#93C5FD"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="620" rx="20" fill="#F6F7FB"/>
+
+  <text x="640" y="42" text-anchor="middle" fill="#0F172A" font-size="25" font-weight="800">案例二：2026 自动驾驶 / AI 多模态「雨夜难例」6 步数据飞轮</text>
+  <text x="640" y="66" text-anchor="middle" fill="#64748B" font-size="14">从车端长尾画面回传到 GPU 满载训练升级：让 AI 越跑越聪明的自动化闭环</text>
+
+  <!-- Top Row: Steps 1 -> 2 -> 3 -->
+  <!-- Step 1 -->
+  <rect x="52" y="106" width="340" height="170" rx="16" fill="#FFFFFF" stroke="#93C5FD" stroke-width="2" filter="url(#shadow)"/>
+  
+    <g>
+      <circle cx="80" cy="134" r="13" fill="#2563EB"/>
+      <text x="80" y="139" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">1</text>
+    </g>
+    
+  <text x="104" y="140" fill="#0F172A" font-size="16" font-weight="800">车端多模态采集</text>
+  <text x="72" y="174" fill="#334155" font-size="13.5" font-weight="600">11 路高清摄像头 + 激光雷达点云 + 车速遥测</text>
+  <text x="72" y="200" fill="#64748B" font-size="12.5">场景：雨夜突然冲出逆行电动车，触发安全员接管</text>
+  
+    <g>
+      <rect x="77.0" y="231.0" width="290" height="26" rx="13.0" fill="#FEE2E2"/>
+      <text x="222" y="248.14" text-anchor="middle" fill="#BE123C" font-size="11.5" font-weight="700">痛点：每秒产 GB 级视频，全量上传网费破产</text>
+    </g>
+    
+
+  <line x1="392" y1="191" x2="458" y2="191" stroke="#3B82F6" stroke-width="2.8" marker-end="url(#arrow-blue)"/>
+
+  <!-- Step 2 -->
+  <rect x="470" y="106" width="340" height="170" rx="16" fill="#FFFFFF" stroke="#FDA4AF" stroke-width="2" filter="url(#shadow)"/>
+  
+    <g>
+      <circle cx="498" cy="134" r="13" fill="#E11D48"/>
+      <text x="498" y="139" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">2</text>
+    </g>
+    
+  <text x="522" y="140" fill="#0F172A" font-size="16" font-weight="800">流式智能体难例初筛</text>
+  <text x="490" y="174" fill="#BE123C" font-size="13.5" font-weight="700">Kafka + Apache Flink Agents</text>
+  <text x="490" y="200" fill="#64748B" font-size="12.5">7x24 监听遥测流 + 状态记忆，比对已有场景库</text>
+  
+    <g>
+      <rect x="495.0" y="231.0" width="290" height="26" rx="13.0" fill="#FFE4E6"/>
+      <text x="640" y="248.14" text-anchor="middle" fill="#BE123C" font-size="11.5" font-weight="700">价值：仅精准回传高危 Corner Case 30 秒片段</text>
+    </g>
+    
+
+  <line x1="810" y1="191" x2="876" y2="191" stroke="#E11D48" stroke-width="2.8" marker-end="url(#arrow-rose)"/>
+
+  <!-- Step 3 -->
+  <rect x="888" y="106" width="340" height="170" rx="16" fill="#FFFFFF" stroke="#6EE7B7" stroke-width="2" filter="url(#shadow)"/>
+  
+    <g>
+      <circle cx="916" cy="134" r="13" fill="#059669"/>
+      <text x="916" y="139" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">3</text>
+    </g>
+    
+  <text x="940" y="140" fill="#0F172A" font-size="16" font-weight="800">多模态入湖 (告别 Parquet)</text>
+  <text x="908" y="174" fill="#047857" font-size="13.5" font-weight="700">对象存储 S3/OSS + Lance 格式</text>
+  <text x="908" y="200" fill="#64748B" font-size="12.5">Blob v2 原生存视频/点云 + 数据集快照版本控制</text>
+  
+    <g>
+      <rect x="913.0" y="231.0" width="290" height="26" rx="13.0" fill="#D1FAE5"/>
+      <text x="1058" y="248.14" text-anchor="middle" fill="#065F46" font-size="11.5" font-weight="700">突破：随机抽帧比 Parquet 快 100 倍！</text>
+    </g>
+    
+
+  <!-- Right vertical connector 3 -> 4 -->
+  <line x1="1058" y1="276" x2="1058" y2="356" stroke="#059669" stroke-width="2.8" marker-end="url(#arrow-green)"/>
+
+  <!-- Bottom Row: Steps 6 <- 5 <- 4 (Clockwise Flywheel!) -->
+  <!-- Step 4 (Bottom Right) -->
+  <rect x="888" y="368" width="340" height="170" rx="16" fill="#FFFFFF" stroke="#C4B5FD" stroke-width="2" filter="url(#shadow)"/>
+  
+    <g>
+      <circle cx="916" cy="396" r="13" fill="#7C3AED"/>
+      <text x="916" y="401" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">4</text>
+    </g>
+    
+  <text x="940" y="402" fill="#0F172A" font-size="16" font-weight="800">异构清洗与自动标注</text>
+  <text x="908" y="436" fill="#6D28D9" font-size="13.5" font-weight="700">K8s (Volcano GPU调度) + Ray Data / Daft</text>
+  <text x="908" y="462" fill="#64748B" font-size="12">CPU 拆帧解码 -> 无缝喂给 GPU 视觉大模型标注</text>
+  
+    <g>
+      <rect x="913.0" y="493.0" width="290" height="26" rx="13.0" fill="#EDE9FE"/>
+      <text x="1058" y="510.14" text-anchor="middle" fill="#5B21B6" font-size="11.5" font-weight="700">价值：异构流式接力，彻底消灭 GPU 空转</text>
+    </g>
+    
+
+  <line x1="888" y1="453" x2="822" y2="453" stroke="#7C3AED" stroke-width="2.8" marker-end="url(#arrow-purple)"/>
+
+  <!-- Step 5 (Bottom Center) -->
+  <rect x="470" y="368" width="340" height="170" rx="16" fill="#FFFFFF" stroke="#FDBA74" stroke-width="2" filter="url(#shadow)"/>
+  
+    <g>
+      <circle cx="498" cy="396" r="13" fill="#EA580C"/>
+      <text x="498" y="401" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">5</text>
+    </g>
+    
+  <text x="522" y="402" fill="#0F172A" font-size="16" font-weight="800">向量语义场景挖掘</text>
+  <text x="490" y="436" fill="#C2410C" font-size="13.5" font-weight="700">Milvus / Qdrant / LanceDB</text>
+  <text x="490" y="462" fill="#64748B" font-size="12.5">一句话搜出全车队 5000 个「雨夜+逆行电动车」片段</text>
+  
+    <g>
+      <rect x="495.0" y="493.0" width="290" height="26" rx="13.0" fill="#FFEDD5"/>
+      <text x="640" y="510.14" text-anchor="middle" fill="#9A3412" font-size="11.5" font-weight="700">产出：一键打包带版本号的精调训练集 v2.6</text>
+    </g>
+    
+
+  <line x1="470" y1="453" x2="404" y2="453" stroke="#F97316" stroke-width="2.8" marker-end="url(#arrow-orange)"/>
+
+  <!-- Step 6 (Bottom Left) -->
+  <rect x="52" y="368" width="340" height="170" rx="16" fill="#FFFFFF" stroke="#38BDF8" stroke-width="2" filter="url(#shadow)"/>
+  
+    <g>
+      <circle cx="80" cy="396" r="13" fill="#0284C7"/>
+      <text x="80" y="401" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">6</text>
+    </g>
+    
+  <text x="104" y="402" fill="#0F172A" font-size="16" font-weight="800">满载训练与 OTA 闭环</text>
+  <text x="72" y="436" fill="#0369A1" font-size="13.5" font-weight="700">PyTorch 分布式训练 -> 仿真回归 -> OTA</text>
+  <text x="72" y="462" fill="#64748B" font-size="12.5">DataLoader 直读 Lance，新模型安全验证后推回车端</text>
+  
+    <g>
+      <rect x="77.0" y="493.0" width="290" height="26" rx="13.0" fill="#E0F2FE"/>
+      <text x="222" y="510.14" text-anchor="middle" fill="#0369A1" font-size="11.5" font-weight="700">目标：GPU 集群利用率稳定压满 95%+</text>
+    </g>
+    
+
+  <!-- Left vertical flywheel closing arrow 6 -> 1 -->
+  <line x1="222" y1="368" x2="222" y2="288" stroke="#0284C7" stroke-width="3" stroke-dasharray="7 5" marker-end="url(#arrow-blue)"/>
+  
+    <g>
+      <rect x="84.0" y="313.0" width="276" height="26" rx="13.0" fill="#0F172A"/>
+      <text x="222" y="330.14" text-anchor="middle" fill="#FFFFFF" font-size="11.5" font-weight="700">OTA 新模型上路发现新难例 · 飞轮越转越快</text>
+    </g>
+    
+
+  <!-- Center Flywheel Badge -->
+  <rect x="498" y="302" width="284" height="40" rx="20" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <text x="640" y="327" text-anchor="middle" fill="#0F172A" font-size="14" font-weight="800">AI Data Flywheel (数据飞轮闭环)</text>
+
+  <!-- Footer Note -->
+  <text x="640" y="582" text-anchor="middle" fill="#475569" font-size="13">大模型 (LLM) 预训练语料飞轮同理：网页/PDF 抽取 -> MinHash/语义去重 -> 质量打分合成 -> Lance 入湖 -> PyTorch 满载训练</text>
+</svg>
