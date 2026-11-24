@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 650" width="1280" height="650">
+  
+  <defs>
+    <style>
+      text { font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans CJK SC', -apple-system, BlinkMacSystemFont, sans-serif; }
+    </style>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#0F172A" flood-opacity="0.07"/>
+    </filter>
+    <filter id="shadow-sm" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0F172A" flood-opacity="0.06"/>
+    </filter>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#3B82F6"/>
+    </marker>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10B981"/>
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#7C3AED"/>
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#F97316"/>
+    </marker>
+    <marker id="arrow-rose" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#E11D48"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="650" rx="20" fill="#F6F7FB"/>
+
+  <text x="640" y="42" text-anchor="middle" fill="#0F172A" font-size="25" font-weight="800">案例二：2026 AI Infra — 你发一句提问，背后「推理工厂」的 6 步流水线</text>
+  <text x="640" y="66" text-anchor="middle" fill="#64748B" font-size="14">为什么以前大模型回答又慢又烧钱，2026 却能做到秒出首字、百万并发？核心奥秘在「PD 分离 + KV Cache 池化」</text>
+
+  <!-- Top Row: ① -> ② -> ③ -->
+  <rect x="46" y="106" width="350" height="176" rx="16" fill="#FFFFFF" stroke="#93C5FD" stroke-width="2" filter="url(#shadow)"/>
+  
+    <g>
+      <circle cx="74" cy="134" r="13" fill="#2563EB"/>
+      <text x="74" y="139" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">1</text>
+    </g>
+    
+  <text x="98" y="140" fill="#0F172A" font-size="16" font-weight="800">AI 网关与智能路由</text>
+  <text x="68" y="174" fill="#1D4ED8" font-size="13.5" font-weight="700">AI Gateway (Envoy / llm-d)</text>
+  <text x="68" y="200" fill="#64748B" font-size="12.5">鉴权、Token 限流计费、感知哪台 GPU 空闲</text>
+  
+    <g>
+      <rect x="73.0" y="233.0" width="296" height="26" rx="13.0" fill="#DBEAFE"/>
+      <text x="221" y="250.14" text-anchor="middle" fill="#1E40AF" font-size="11.5" font-weight="700">绝活：根据 Prompt 前缀做缓存亲和性路由</text>
+    </g>
+    
+
+  <line x1="396" y1="194" x2="454" y2="194" stroke="#3B82F6" stroke-width="2.8" marker-end="url(#arrow-blue)"/>
+
+  <rect x="464" y="106" width="350" height="176" rx="16" fill="#FFFFFF" stroke="#6EE7B7" stroke-width="2" filter="url(#shadow)"/>
+  
+    <g>
+      <circle cx="492" cy="134" r="13" fill="#059669"/>
+      <text x="492" y="139" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">2</text>
+    </g>
+    
+  <text x="516" y="140" fill="#0F172A" font-size="16" font-weight="800">先查记忆：KV Cache 缓存池</text>
+  <text x="486" y="174" fill="#047857" font-size="13.5" font-weight="700">Mooncake Store / SGLang RadixAttention</text>
+  <text x="486" y="200" fill="#64748B" font-size="12.5">把算过的长文档/系统提示词存在 DRAM/SSD 池里</text>
+  
+    <g>
+      <rect x="491.0" y="233.0" width="296" height="26" rx="13.0" fill="#D1FAE5"/>
+      <text x="639" y="250.14" text-anchor="middle" fill="#065F46" font-size="11.5" font-weight="700">收益：命中直接跳过重复计算 · 省 70% 算力</text>
+    </g>
+    
+
+  <line x1="814" y1="194" x2="872" y2="194" stroke="#10B981" stroke-width="2.8" marker-end="url(#arrow-green)"/>
+
+  <rect x="882" y="106" width="352" height="176" rx="16" fill="#FFFFFF" stroke="#FDA4AF" stroke-width="2" filter="url(#shadow)"/>
+  
+    <g>
+      <circle cx="910" cy="134" r="13" fill="#E11D48"/>
+      <text x="910" y="139" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">3</text>
+    </g>
+    
+  <text x="934" y="140" fill="#0F172A" font-size="16" font-weight="800">Prefill 集群 (一口气读完提问)</text>
+  <text x="904" y="174" fill="#BE123C" font-size="13.5" font-weight="700">算力密集型 GPU 池 (Compute-Bound)</text>
+  <text x="904" y="200" fill="#64748B" font-size="12.5">像阅卷老师并行扫完 10 万字上下文，生成 KV 状态</text>
+  
+    <g>
+      <rect x="909.0" y="233.0" width="298" height="26" rx="13.0" fill="#FFE4E6"/>
+      <text x="1058" y="250.14" text-anchor="middle" fill="#BE123C" font-size="11.5" font-weight="700">核心目标：压低首字延迟 TTFT (秒出第 1 个字)</text>
+    </g>
+    
+
+  <!-- Right Vertical Arrow 3 -> 4 (RDMA Transfer!) -->
+  <line x1="1058" y1="282" x2="1058" y2="352" stroke="#E11D48" stroke-width="3" marker-end="url(#arrow-rose)"/>
+  
+    <g>
+      <rect x="923.0" y="303.0" width="270" height="26" rx="13.0" fill="#9F1239"/>
+      <text x="1058" y="320.14" text-anchor="middle" fill="#FFFFFF" font-size="11.5" font-weight="700">RDMA / NIXL 显存直传 KV Cache</text>
+    </g>
+    
+
+  <!-- Bottom Row: ⑥ <- ⑤ <- ④ -->
+  <rect x="882" y="362" width="352" height="176" rx="16" fill="#FFFFFF" stroke="#C4B5FD" stroke-width="2" filter="url(#shadow)"/>
+  
+    <g>
+      <circle cx="910" cy="390" r="13" fill="#7C3AED"/>
+      <text x="910" y="395" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">4</text>
+    </g>
+    
+  <text x="934" y="396" fill="#0F172A" font-size="16" font-weight="800">Decode 集群 (逐字丝滑吐答案)</text>
+  <text x="904" y="430" fill="#6D28D9" font-size="13.5" font-weight="700">显存带宽密集型：vLLM / SGLang</text>
+  <text x="904" y="456" fill="#64748B" font-size="12.5">PagedAttention 防显存碎片 + 连续批处理并发吐字</text>
+  
+    <g>
+      <rect x="909.0" y="489.0" width="298" height="26" rx="13.0" fill="#EDE9FE"/>
+      <text x="1058" y="506.14" text-anchor="middle" fill="#5B21B6" font-size="11.5" font-weight="700">彻底与 Prefill 解耦，不再互相抢卡拖慢速度！</text>
+    </g>
+    
+
+  <line x1="882" y1="450" x2="824" y2="450" stroke="#7C3AED" stroke-width="2.8" marker-end="url(#arrow-purple)"/>
+
+  <rect x="464" y="362" width="350" height="176" rx="16" fill="#FFFFFF" stroke="#FDBA74" stroke-width="2" filter="url(#shadow)"/>
+  
+    <g>
+      <circle cx="492" cy="390" r="13" fill="#EA580C"/>
+      <text x="492" y="395" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">5</text>
+    </g>
+    
+  <text x="516" y="396" fill="#0F172A" font-size="16" font-weight="800">底层算子与硬件压榨</text>
+  <text x="486" y="430" fill="#C2410C" font-size="13.5" font-weight="700">CUDA / Triton / FlashAttention + 量化</text>
+  <text x="486" y="456" fill="#64748B" font-size="12.5">把 FP16 压缩到 FP8/INT4，手写内核吃满 GPU 算力</text>
+  
+    <g>
+      <rect x="491.0" y="489.0" width="296" height="26" rx="13.0" fill="#FFEDD5"/>
+      <text x="639" y="506.14" text-anchor="middle" fill="#9A3412" font-size="11.5" font-weight="700">每一代算子优化都能把百万美元推理账单砍半</text>
+    </g>
+    
+
+  <line x1="464" y1="450" x2="406" y2="450" stroke="#F97316" stroke-width="2.8" marker-end="url(#arrow-orange)"/>
+
+  <rect x="46" y="362" width="350" height="176" rx="16" fill="#FFFFFF" stroke="#38BDF8" stroke-width="2" filter="url(#shadow)"/>
+  
+    <g>
+      <circle cx="74" cy="390" r="13" fill="#0284C7"/>
+      <text x="74" y="395" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">6</text>
+    </g>
+    
+  <text x="98" y="396" fill="#0F172A" font-size="16" font-weight="800">万卡调度与高速存储底座</text>
+  <text x="68" y="430" fill="#0369A1" font-size="13.5" font-weight="700">K8s + Volcano / KubeRay + 3FS / GDS</text>
+  <text x="68" y="456" fill="#64748B" font-size="12.5">NVLink/RoCE 拓扑调度 · 万卡训推混部与故障秒级自愈</text>
+  
+    <g>
+      <rect x="73.0" y="489.0" width="296" height="26" rx="13.0" fill="#E0F2FE"/>
+      <text x="221" y="506.14" text-anchor="middle" fill="#0369A1" font-size="11.5" font-weight="700">支撑离线 Megatron 万卡训练与百 GB 权重秒加载</text>
+    </g>
+    
+
+  <!-- Bottom Summary Banner -->
+  <rect x="46" y="568" width="1188" height="54" rx="12" fill="#0F172A"/>
+  <text x="640" y="600" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">一句话看懂 AI Infra：它就像给超级跑车造「发动机(算子) + 变速箱(PD分离) + 高速公路(RDMA) + 智能交警(K8s调度)」</text>
+</svg>

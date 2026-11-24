@@ -1,0 +1,232 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 710" width="1280" height="710">
+  
+  <defs>
+    <style>
+      text { font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans CJK SC', -apple-system, BlinkMacSystemFont, sans-serif; }
+    </style>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#0F172A" flood-opacity="0.07"/>
+    </filter>
+    <filter id="shadow-sm" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0F172A" flood-opacity="0.06"/>
+    </filter>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#3B82F6"/>
+    </marker>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10B981"/>
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#7C3AED"/>
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#F97316"/>
+    </marker>
+    <marker id="arrow-rose" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#E11D48"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="710" rx="20" fill="#F6F7FB"/>
+
+  <text x="640" y="42" text-anchor="middle" fill="#0F172A" font-size="25" font-weight="800">案例一：你在 App 点开商品页，100 毫秒内穿越 8 层 Infra</text>
+  <text x="640" y="66" text-anchor="middle" fill="#64748B" font-size="14">为什么几亿人同时抢购页面也能 0.1 秒打开、不卡不崩？跟着一次请求顺号走完后台全链路</text>
+
+  <!-- TOP ROW: ① -> ② -> ③ -> ④ -->
+  <!-- Step 1: Client + DNS + CDN -->
+  <rect x="40" y="106" width="268" height="214" rx="16" fill="#FFFFFF" stroke="#93C5FD" stroke-width="1.8" filter="url(#shadow)"/>
+  
+    <g>
+      <circle cx="66" cy="134" r="13" fill="#2563EB"/>
+      <text x="66" y="139" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">1</text>
+    </g>
+    
+  <text x="90" y="140" fill="#0F172A" font-size="15.5" font-weight="800">就近接入：DNS + CDN</text>
+  
+    <g>
+      <rect x="64" y="160" width="38" height="64" rx="7" fill="#1E293B"/>
+      <rect x="67.5" y="167" width="31" height="49" rx="3" fill="#FFFFFF"/>
+      <rect x="77" y="162.5" width="12" height="2.2" rx="1" fill="#64748B"/>
+      <circle cx="83.0" cy="220" r="2.2" fill="#94A3B8"/>
+      <rect x="71" y="173" width="24" height="14" rx="2.5" fill="#DBEAFE"/>
+      <rect x="71" y="191" width="24" height="8" rx="2" fill="#3B82F6"/>
+      <rect x="71" y="203" width="20" height="5" rx="1.5" fill="#CBD5E1"/>
+    </g>
+    
+  <text x="116" y="178" fill="#1E293B" font-size="13" font-weight="700">智能域名解析 (DNS)</text>
+  <text x="116" y="198" fill="#64748B" font-size="12">把北京用户指到北京机房</text>
+  <text x="116" y="218" fill="#1D4ED8" font-size="12" font-weight="600">CDN 边缘节点直返图片</text>
+  
+    <g>
+      <rect x="62.0" y="244.0" width="224" height="24" rx="12.0" fill="#DBEAFE"/>
+      <text x="174" y="259.96" text-anchor="middle" fill="#1E40AF" font-size="11" font-weight="700">静态图片/视频 90% 就近拦截</text>
+    </g>
+    
+  <text x="174" y="298" text-anchor="middle" fill="#475569" font-size="11.5">动态请求(价格/库存)继续进机房</text>
+
+  <line x1="308" y1="212" x2="346" y2="212" stroke="#3B82F6" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+  <text x="327" y="200" text-anchor="middle" fill="#1D4ED8" font-size="10.5" font-weight="700">~8ms</text>
+
+  <!-- Step 2: L4/L7 Gateway -->
+  <rect x="352" y="106" width="268" height="214" rx="16" fill="#FFFFFF" stroke="#C4B5FD" stroke-width="1.8" filter="url(#shadow)"/>
+  
+    <g>
+      <circle cx="378" cy="134" r="13" fill="#7C3AED"/>
+      <text x="378" y="139" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">2</text>
+    </g>
+    
+  <text x="402" y="140" fill="#0F172A" font-size="15.5" font-weight="800">抗洪大门：LVS + Envoy</text>
+  <rect x="372" y="158" width="228" height="44" rx="8" fill="#F5F3FF" stroke="#DDD6FE"/>
+  <text x="486" y="178" text-anchor="middle" fill="#5B21B6" font-size="12.5" font-weight="700">四层负载均衡 (LVS / DPDK)</text>
+  <text x="486" y="194" text-anchor="middle" fill="#64748B" font-size="11">把百万流量均匀分摊给网关集群</text>
+  <rect x="372" y="210" width="228" height="44" rx="8" fill="#F5F3FF" stroke="#DDD6FE"/>
+  <text x="486" y="230" text-anchor="middle" fill="#5B21B6" font-size="12.5" font-weight="700">七层网关 (Envoy Gateway)</text>
+  <text x="486" y="246" text-anchor="middle" fill="#64748B" font-size="11">HTTPS 解密 · 鉴权 · 防爬虫限流</text>
+  
+    <g>
+      <rect x="374.0" y="274.0" width="224" height="24" rx="12.0" fill="#EDE9FE"/>
+      <text x="486" y="289.96" text-anchor="middle" fill="#6D28D9" font-size="11" font-weight="700">拦住恶意攻击与超载洪峰 · ~2ms</text>
+    </g>
+    
+
+  <line x1="620" y1="212" x2="658" y2="212" stroke="#7C3AED" stroke-width="2.5" marker-end="url(#arrow-purple)"/>
+  <text x="639" y="200" text-anchor="middle" fill="#6D28D9" font-size="10.5" font-weight="700">路由</text>
+
+  <!-- Step 3: Cell Routing & K8s -->
+  <rect x="664" y="106" width="268" height="214" rx="16" fill="#FFFFFF" stroke="#6EE7B7" stroke-width="1.8" filter="url(#shadow)"/>
+  
+    <g>
+      <circle cx="690" cy="134" r="13" fill="#059669"/>
+      <text x="690" y="139" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">3</text>
+    </g>
+    
+  <text x="714" y="140" fill="#0F172A" font-size="15.5" font-weight="800">容器调度：K8s + Cilium</text>
+  <rect x="684" y="158" width="228" height="48" rx="8" fill="#ECFDF5" stroke="#A7F3D0"/>
+  <text x="798" y="179" text-anchor="middle" fill="#065F46" font-size="12.5" font-weight="700">单元化精准投递 (Cell Routing)</text>
+  <text x="798" y="196" text-anchor="middle" fill="#64748B" font-size="11">请求落入本机房业务 Pod 集群</text>
+  <rect x="684" y="214" width="228" height="44" rx="8" fill="#ECFDF5" stroke="#A7F3D0"/>
+  <text x="798" y="234" text-anchor="middle" fill="#065F46" font-size="12.5" font-weight="700">Cilium (eBPF) 极速网络转发</text>
+  <text x="798" y="250" text-anchor="middle" fill="#64748B" font-size="11">绕过慢速 iptables · 自动弹性扩容</text>
+  
+    <g>
+      <rect x="686.0" y="274.0" width="224" height="24" rx="12.0" fill="#D1FAE5"/>
+      <text x="798" y="289.96" text-anchor="middle" fill="#065F46" font-size="11" font-weight="700">大促自动拉起千台容器 · &lt;1ms</text>
+    </g>
+    
+
+  <line x1="932" y1="212" x2="970" y2="212" stroke="#10B981" stroke-width="2.5" marker-end="url(#arrow-green)"/>
+
+  <!-- Step 4: Microservice RPC & Mesh -->
+  <rect x="976" y="106" width="264" height="214" rx="16" fill="#FFFFFF" stroke="#FDBA74" stroke-width="1.8" filter="url(#shadow)"/>
+  
+    <g>
+      <circle cx="1002" cy="134" r="13" fill="#EA580C"/>
+      <text x="1002" y="139" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">4</text>
+    </g>
+    
+  <text x="1026" y="140" fill="#0F172A" font-size="15.5" font-weight="800">微服务协作：RPC + 网格</text>
+  <text x="996" y="172" fill="#1E293B" font-size="12.5" font-weight="700">商品服务同时并发调用：</text>
+  <text x="996" y="196" fill="#475569" font-size="12">• 价格服务 (算满减折扣)</text>
+  <text x="996" y="218" fill="#475569" font-size="12">• 库存服务 (查还有没有货)</text>
+  <text x="996" y="240" fill="#475569" font-size="12">• 评论服务 (挂了就降级不显示)</text>
+  
+    <g>
+      <rect x="996.0" y="269.0" width="224" height="26" rx="13.0" fill="#FFEDD5"/>
+      <text x="1108" y="285.96" text-anchor="middle" fill="#9A3412" font-size="11" font-weight="700">gRPC / Kitex + Ambient Mesh</text>
+    </g>
+    
+
+  <!-- Vertical arrow 4 -> 5 -->
+  <line x1="1108" y1="320" x2="1108" y2="366" stroke="#F97316" stroke-width="2.5" marker-end="url(#arrow-orange)"/>
+
+  <!-- BOTTOM ROW (Right to Left: ⑤ -> ⑥ -> ⑦, plus ⑧ Observability spanning bottom) -->
+  <!-- Step 5: High-Speed Cache (Bottom Right) -->
+  <rect x="862" y="372" width="378" height="176" rx="16" fill="#FFFFFF" stroke="#FDA4AF" stroke-width="1.8" filter="url(#shadow)"/>
+  
+    <g>
+      <circle cx="888" cy="400" r="13" fill="#E11D48"/>
+      <text x="888" y="405" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">5</text>
+    </g>
+    
+  <text x="912" y="406" fill="#0F172A" font-size="15.5" font-weight="800">先查内存缓存：Valkey / Redis</text>
+  <text x="884" y="438" fill="#1E293B" font-size="13" font-weight="600">爆款商品详情与库存提前放进纯内存</text>
+  <text x="884" y="462" fill="#64748B" font-size="12">95% 的读请求在这里 0.5 毫秒直接返回，根本不碰磁盘！</text>
+  
+    <g>
+      <rect x="890.0" y="495.0" width="322" height="26" rx="13.0" fill="#FFE4E6"/>
+      <text x="1051" y="512.14" text-anchor="middle" fill="#BE123C" font-size="11.5" font-weight="700">防缓存击穿/雪崩 · 扛住十万级并发读</text>
+    </g>
+    
+
+  <line x1="862" y1="460" x2="808" y2="460" stroke="#E11D48" stroke-width="2.5" stroke-dasharray="5 4" marker-end="url(#arrow-rose)"/>
+  <text x="835" y="446" text-anchor="middle" fill="#BE123C" font-size="10.5" font-weight="700">未命中</text>
+  <text x="835" y="476" text-anchor="middle" fill="#BE123C" font-size="10.5" font-weight="700">或写入</text>
+
+  <!-- Step 6: Distributed DB (Bottom Center) -->
+  <rect x="452" y="372" width="350" height="176" rx="16" fill="#FFFFFF" stroke="#60A5FA" stroke-width="1.8" filter="url(#shadow)"/>
+  
+    <g>
+      <circle cx="478" cy="400" r="13" fill="#2563EB"/>
+      <text x="478" y="405" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">6</text>
+    </g>
+    
+  <text x="502" y="406" fill="#0F172A" font-size="15.5" font-weight="800">落盘兜底：分布式数据库</text>
+  
+    <g>
+      <path d="M 478.0,452.0 L 478.0,480.0 A 24.0,8 0 0,0 526.0,480.0 L 526.0,452.0 Z" fill="#3B82F6" stroke="#1D4ED8" stroke-width="1.5"/>
+      <ellipse cx="502" cy="452.0" rx="24.0" ry="8" fill="#60A5FA" stroke="#1D4ED8" stroke-width="1.5"/>
+      <path d="M 478.0,463.8 A 24.0,6.4 0 0,0 526.0,463.8" fill="none" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="1.2"/>
+    </g>
+    
+  <text x="502" y="470" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="800">DB</text>
+  <text x="544" y="444" fill="#1E40AF" font-size="13" font-weight="700">TiDB / OceanBase / MySQL 集群</text>
+  <text x="544" y="466" fill="#64748B" font-size="12">Raft 多副本强一致 · 扣库存绝不超卖</text>
+  <text x="544" y="486" fill="#64748B" font-size="12">底层跑在 Ceph / 云盘持久化存储上</text>
+  
+    <g>
+      <rect x="480.0" y="506.0" width="294" height="24" rx="12.0" fill="#DBEAFE"/>
+      <text x="627" y="521.96" text-anchor="middle" fill="#1E40AF" font-size="11" font-weight="700">ACID 强一致保障 · 耗时约 3~10ms</text>
+    </g>
+    
+
+  <line x1="452" y1="460" x2="398" y2="460" stroke="#3B82F6" stroke-width="2.5" stroke-dasharray="5 4" marker-end="url(#arrow-blue)"/>
+  <text x="425" y="446" text-anchor="middle" fill="#1D4ED8" font-size="10.5" font-weight="700">异步</text>
+  <text x="425" y="476" text-anchor="middle" fill="#1D4ED8" font-size="10.5" font-weight="700">解耦</text>
+
+  <!-- Step 7: Async MQ (Bottom Left) -->
+  <rect x="40" y="372" width="352" height="176" rx="16" fill="#FFFFFF" stroke="#34D399" stroke-width="1.8" filter="url(#shadow)"/>
+  
+    <g>
+      <circle cx="66" cy="400" r="13" fill="#059669"/>
+      <text x="66" y="405" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">7</text>
+    </g>
+    
+  <text x="90" y="406" fill="#0F172A" font-size="15.5" font-weight="800">异步发消息：Kafka / RocketMQ</text>
+  <text x="62" y="438" fill="#1E293B" font-size="13" font-weight="600">加积分 / 发短信 / 记埋点不阻塞主流程！</text>
+  <text x="62" y="462" fill="#64748B" font-size="12">往消息队列丢一条通知就立刻返回“成功”，下游慢慢消化</text>
+  
+    <g>
+      <rect x="66.0" y="495.0" width="300" height="26" rx="13.0" fill="#D1FAE5"/>
+      <text x="216" y="512.14" text-anchor="middle" fill="#065F46" font-size="11.5" font-weight="700">顺手接入 Data Infra：实时风控与大屏</text>
+    </g>
+    
+
+  <!-- Step 8: Full-Link Observability Bar across Bottom (y=582..674) -->
+  <rect x="40" y="582" width="1200" height="92" rx="16" fill="#0F172A" filter="url(#shadow)"/>
+  
+    <g>
+      <circle cx="74" cy="628" r="13" fill="#38BDF8"/>
+      <text x="74" y="633" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">8</text>
+    </g>
+    
+  <text x="100" y="620" fill="#FFFFFF" font-size="16" font-weight="800">全程透视眼：OpenTelemetry 可观测性 + SRE 稳定性护航</text>
+  <text x="100" y="646" fill="#CBD5E1" font-size="13">请求从 ① 到 ⑦ 携带同一个 TraceID：每一步花了多少毫秒、哪台机器报错、CPU 有没有飙升，秒级呈现在监控大屏与 AIOps 告警台！</text>
+
+  <!-- Subtle dashed arrows pointing down to Observability bar -->
+  <line x1="216" y1="548" x2="216" y2="578" stroke="#94A3B8" stroke-width="1.8" stroke-dasharray="4 3"/>
+  <line x1="627" y1="548" x2="627" y2="578" stroke="#94A3B8" stroke-width="1.8" stroke-dasharray="4 3"/>
+  <line x1="1051" y1="548" x2="1051" y2="578" stroke="#94A3B8" stroke-width="1.8" stroke-dasharray="4 3"/>
+</svg>

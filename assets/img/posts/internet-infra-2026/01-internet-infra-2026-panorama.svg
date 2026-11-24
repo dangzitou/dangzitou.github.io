@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 790" width="1280" height="790">
+  
+  <defs>
+    <style>
+      text { font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans CJK SC', -apple-system, BlinkMacSystemFont, sans-serif; }
+    </style>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#0F172A" flood-opacity="0.07"/>
+    </filter>
+    <filter id="shadow-sm" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0F172A" flood-opacity="0.06"/>
+    </filter>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#3B82F6"/>
+    </marker>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10B981"/>
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#7C3AED"/>
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#F97316"/>
+    </marker>
+    <marker id="arrow-rose" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#E11D48"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="790" rx="20" fill="#F4F6FA"/>
+
+  <text x="640" y="42" text-anchor="middle" fill="#0F172A" font-size="26" font-weight="800">2026 互联网基础架构 (Infra) 全景版图</text>
+  <text x="640" y="68" text-anchor="middle" fill="#64748B" font-size="14">业务 App 之下的一切底座：云原生算力 + 存储中间件 + 流量多活 + Data &amp; AI Infra 双翼</text>
+
+  <!-- Top Business Roof (x=36..980, y=90, h=54) -->
+  <rect x="36" y="90" width="944" height="54" rx="12" fill="#0F172A" filter="url(#shadow-sm)"/>
+  <text x="508" y="122" text-anchor="middle" fill="#FFFFFF" font-size="15.5" font-weight="700">上层业务应用：电商交易 / 短视频社交 / 支付金融 / 搜索广告 / AI 聊天与智能体产品</text>
+
+  <!-- Layer 4 (Top Infra): Data Infra & AI Infra Twin Wings (y=164, h=126) -->
+  <rect x="36" y="164" width="944" height="126" rx="14" fill="#FFFFFF" stroke="#FDA4AF" stroke-width="1.8" filter="url(#shadow-sm)"/>
+  <rect x="36" y="164" width="124" height="126" rx="14" fill="#E11D48"/>
+  <rect x="144" y="164" width="16" height="126" fill="#E11D48"/>
+  <text x="98" y="218" text-anchor="middle" fill="#FFFFFF" font-size="15" font-weight="800">数据与 AI</text>
+  <text x="98" y="240" text-anchor="middle" fill="#FFE4E6" font-size="12">2026 核心增量</text>
+
+  <!-- Left Wing: AI Infra -->
+  <rect x="176" y="178" width="444" height="98" rx="10" fill="#FFF1F2" stroke="#FECDD3" stroke-width="1.5"/>
+  <text x="398" y="201" text-anchor="middle" fill="#9F1239" font-size="14" font-weight="800">AI Infra (训推一体化与算力压榨 · 最火赛道)</text>
+  <text x="398" y="224" text-anchor="middle" fill="#1E293B" font-size="12.5" font-weight="600">推理工厂：vLLM / SGLang + PD 分离 + Mooncake KV 池</text>
+  <text x="398" y="245" text-anchor="middle" fill="#1E293B" font-size="12.5" font-weight="600">万卡训练与算子：Megatron / FSDP2 + CUDA / Triton / MLIR</text>
+  <text x="398" y="264" text-anchor="middle" fill="#BE123C" font-size="11">核心指标：降低首字延迟 TTFT · 拉满万卡训练利用率 MFU</text>
+
+  <!-- Right Wing: Data Infra -->
+  <rect x="634" y="178" width="330" height="98" rx="10" fill="#FFF7ED" stroke="#FED7AA" stroke-width="1.5"/>
+  <text x="799" y="201" text-anchor="middle" fill="#9A3412" font-size="14" font-weight="800">Data Infra (湖仓一体与多模态数据)</text>
+  <text x="799" y="224" text-anchor="middle" fill="#1E293B" font-size="12.5" font-weight="600">Flink 2.x / Spark+Velox / Iceberg &amp; Paimon</text>
+  <text x="799" y="245" text-anchor="middle" fill="#1E293B" font-size="12.5" font-weight="600">StarRocks / Ray Data / Lance / Flink Agents</text>
+  <text x="799" y="264" text-anchor="middle" fill="#C2410C" font-size="11">承接全公司数据流转、分析报表与 AI 语料飞轮</text>
+
+  <!-- Layer 3: Traffic Gateway, Service Mesh & Middleware (y=308, h=106) -->
+  <rect x="36" y="308" width="944" height="106" rx="14" fill="#FFFFFF" stroke="#C4B5FD" stroke-width="1.8" filter="url(#shadow-sm)"/>
+  <rect x="36" y="308" width="124" height="106" rx="14" fill="#7C3AED"/>
+  <rect x="144" y="308" width="16" height="106" fill="#7C3AED"/>
+  <text x="98" y="354" text-anchor="middle" fill="#FFFFFF" font-size="15" font-weight="800">流量与中间件</text>
+  <text x="98" y="376" text-anchor="middle" fill="#EDE9FE" font-size="12">连接与高可用</text>
+
+  <rect x="176" y="322" width="248" height="78" rx="10" fill="#F5F3FF" stroke="#DDD6FE"/>
+  <text x="300" y="344" text-anchor="middle" fill="#5B21B6" font-size="13.5" font-weight="700">入口流量网关 &amp; 负载均衡</text>
+  <text x="300" y="365" text-anchor="middle" fill="#1E293B" font-size="12" font-weight="600">DNS / CDN / LVS / Envoy Gateway</text>
+  <text x="300" y="385" text-anchor="middle" fill="#64748B" font-size="11">百万 QPS 接入 + AI Agent 统一网关</text>
+
+  <rect x="438" y="322" width="260" height="78" rx="10" fill="#F5F3FF" stroke="#DDD6FE"/>
+  <text x="568" y="344" text-anchor="middle" fill="#5B21B6" font-size="13.5" font-weight="700">微服务治理 &amp; 无 Sidecar 网格</text>
+  <text x="568" y="365" text-anchor="middle" fill="#1E293B" font-size="12" font-weight="600">gRPC / Kitex / Dubbo / Nacos</text>
+  <text x="568" y="385" text-anchor="middle" fill="#6D28D9" font-size="11">Istio Ambient Mesh (告别 Sidecar 内存税)</text>
+
+  <rect x="712" y="322" width="252" height="78" rx="10" fill="#FAF5FF" stroke="#E9D5FF"/>
+  <text x="838" y="344" text-anchor="middle" fill="#5B21B6" font-size="13.5" font-weight="700">消息队列 &amp; 异地多活容灾</text>
+  <text x="838" y="365" text-anchor="middle" fill="#1E293B" font-size="12" font-weight="600">Kafka / RocketMQ / 单元化路由</text>
+  <text x="838" y="385" text-anchor="middle" fill="#64748B" font-size="11">城市级断电秒级切流 · 爆炸半径隔离</text>
+
+  <!-- Layer 2: Storage & Distributed Database Infra (y=432, h=106) -->
+  <rect x="36" y="432" width="944" height="106" rx="14" fill="#FFFFFF" stroke="#6EE7B7" stroke-width="1.8" filter="url(#shadow-sm)"/>
+  <rect x="36" y="432" width="124" height="106" rx="14" fill="#059669"/>
+  <rect x="144" y="432" width="16" height="106" fill="#059669"/>
+  <text x="98" y="478" text-anchor="middle" fill="#FFFFFF" font-size="15" font-weight="800">存储与数据库</text>
+  <text x="98" y="500" text-anchor="middle" fill="#D1FAE5" font-size="12">持久化与缓存</text>
+
+  <rect x="176" y="446" width="252" height="78" rx="10" fill="#ECFDF5" stroke="#A7F3D0"/>
+  <text x="302" y="468" text-anchor="middle" fill="#065F46" font-size="13.5" font-weight="700">云原生分布式数据库</text>
+  <text x="302" y="489" text-anchor="middle" fill="#1E293B" font-size="12" font-weight="600">TiDB / OceanBase Bacchus</text>
+  <text x="302" y="509" text-anchor="middle" fill="#047857" font-size="11">Neon Serverless Postgres (存算分离)</text>
+
+  <rect x="442" y="446" width="224" height="78" rx="10" fill="#ECFDF5" stroke="#A7F3D0"/>
+  <text x="554" y="468" text-anchor="middle" fill="#065F46" font-size="13.5" font-weight="700">高速内存缓存 (KV)</text>
+  <text x="554" y="489" text-anchor="middle" fill="#1E293B" font-size="12" font-weight="600">Valkey / Redis / Tair</text>
+  <text x="554" y="509" text-anchor="middle" fill="#64748B" font-size="11">亚毫秒读热点 · 扛住 95% 查询流量</text>
+
+  <rect x="680" y="446" width="284" height="78" rx="10" fill="#F0FDF4" stroke="#BBF7D0"/>
+  <text x="822" y="468" text-anchor="middle" fill="#065F46" font-size="13.5" font-weight="700">分布式块 / 对象 / AI 并行存储</text>
+  <text x="822" y="489" text-anchor="middle" fill="#1E293B" font-size="12" font-weight="600">Ceph / S3·OSS / 3FS / JuiceFS / Lustre</text>
+  <text x="822" y="509" text-anchor="middle" fill="#047857" font-size="11">支持百 GB 权重秒级 Checkpoint 与 GDS 直读</text>
+
+  <!-- Layer 1: Cloud Infra & Cloud-Native Compute (y=556, h=106) -->
+  <rect x="36" y="556" width="944" height="106" rx="14" fill="#FFFFFF" stroke="#93C5FD" stroke-width="1.8" filter="url(#shadow-sm)"/>
+  <rect x="36" y="556" width="124" height="106" rx="14" fill="#2563EB"/>
+  <rect x="144" y="556" width="16" height="106" fill="#2563EB"/>
+  <text x="98" y="602" text-anchor="middle" fill="#FFFFFF" font-size="15" font-weight="800">云原生底座</text>
+  <text x="98" y="624" text-anchor="middle" fill="#DBEAFE" font-size="12">Cloud Infra</text>
+
+  <rect x="176" y="570" width="276" height="78" rx="10" fill="#EFF6FF" stroke="#BFDBFE"/>
+  <text x="314" y="592" text-anchor="middle" fill="#1E40AF" font-size="13.5" font-weight="700">容器编排与异构算力调度</text>
+  <text x="314" y="613" text-anchor="middle" fill="#1E293B" font-size="12" font-weight="600">Kubernetes + Volcano / KubeRay</text>
+  <text x="314" y="633" text-anchor="middle" fill="#1D4ED8" font-size="11">Gang 调度 + GPU 拓扑 + 离在线混部</text>
+
+  <rect x="466" y="570" width="248" height="78" rx="10" fill="#EFF6FF" stroke="#BFDBFE"/>
+  <text x="590" y="592" text-anchor="middle" fill="#1E40AF" font-size="13.5" font-weight="700">云网络与内核加速 (eBPF)</text>
+  <text x="590" y="613" text-anchor="middle" fill="#1E293B" font-size="12" font-weight="600">VPC / SDN / Cilium (eBPF CNI)</text>
+  <text x="590" y="633" text-anchor="middle" fill="#64748B" font-size="11">彻底淘汰 iptables · 内核态安全 Tetragon</text>
+
+  <rect x="728" y="570" width="236" height="78" rx="10" fill="#F8FAFC" stroke="#CBD5E1"/>
+  <text x="846" y="592" text-anchor="middle" fill="#334155" font-size="13.5" font-weight="700">虚拟化与 OS 内核定制</text>
+  <text x="846" y="613" text-anchor="middle" fill="#1E293B" font-size="12" font-weight="600">KVM / Kata / 自研 Linux 内核</text>
+  <text x="846" y="633" text-anchor="middle" fill="#64748B" font-size="11">Cgroup 隔离 · io_uring · DPU 硬件卸载</text>
+
+  <!-- Layer 0: Physical Hardware & Interconnect (y=680, h=80) -->
+  <rect x="36" y="680" width="944" height="80" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <rect x="36" y="680" width="124" height="80" rx="14" fill="#475569"/>
+  <rect x="144" y="680" width="16" height="80" fill="#475569"/>
+  <text x="98" y="714" text-anchor="middle" fill="#FFFFFF" font-size="15" font-weight="800">物理硬件层</text>
+  <text x="98" y="736" text-anchor="middle" fill="#CBD5E1" font-size="11.5">IDC / 算力网络</text>
+
+  <rect x="176" y="694" width="250" height="52" rx="9" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="301" y="716" text-anchor="middle" fill="#1E293B" font-size="13" font-weight="700">异构计算芯片</text>
+  <text x="301" y="735" text-anchor="middle" fill="#64748B" font-size="11.5">x86 / ARM CPU · GPU / NPU / DPU</text>
+
+  <rect x="440" y="694" width="268" height="52" rx="9" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="574" y="716" text-anchor="middle" fill="#1E293B" font-size="13" font-weight="700">超高速互联网络</text>
+  <text x="574" y="735" text-anchor="middle" fill="#64748B" font-size="11.5">NVLink · InfiniBand · RoCEv2 (RDMA)</text>
+
+  <rect x="722" y="694" width="242" height="52" rx="9" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="843" y="716" text-anchor="middle" fill="#1E293B" font-size="13" font-weight="700">机房供电与全闪存储</text>
+  <text x="843" y="735" text-anchor="middle" fill="#64748B" font-size="11.5">HBM 显存 · NVMe SSD · 液冷智算中心</text>
+
+  <!-- Right Side Pillar: Platform Engineering, Observability & SRE (x=1004..1244, y=90..760) -->
+  <rect x="1004" y="90" width="240" height="670" rx="16" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="1004" y="90" width="240" height="56" rx="16" fill="#0F172A"/>
+  <rect x="1004" y="130" width="240" height="16" fill="#0F172A"/>
+  <text x="1124" y="119" text-anchor="middle" fill="#FFFFFF" font-size="15" font-weight="800">平台、观测与稳定性</text>
+  <text x="1124" y="138" text-anchor="middle" fill="#94A3B8" font-size="11">贯穿全栈的护航与提效中枢</text>
+
+  <!-- Pillar 1: Observability -->
+  <rect x="1020" y="166" width="208" height="176" rx="12" fill="#F0F9FF" stroke="#BAE6FD"/>
+  <text x="1124" y="192" text-anchor="middle" fill="#0369A1" font-size="14" font-weight="800">统一可观测性 (O11y)</text>
+  <line x1="1040" y1="204" x2="1208" y2="204" stroke="#BAE6FD"/>
+  <text x="1124" y="228" text-anchor="middle" fill="#1E293B" font-size="13" font-weight="700">OpenTelemetry (统一标准)</text>
+  <text x="1124" y="252" text-anchor="middle" fill="#1E293B" font-size="12.5">Metrics 指标 / Logs 日志</text>
+  <text x="1124" y="274" text-anchor="middle" fill="#1E293B" font-size="12.5">Traces 链路 / eBPF 剖析</text>
+  <text x="1124" y="302" text-anchor="middle" fill="#0369A1" font-size="11.5" font-weight="600">Prometheus / Grafana / ClickHouse</text>
+  <text x="1124" y="324" text-anchor="middle" fill="#64748B" font-size="11">1 分钟定位全链路故障根因</text>
+
+  <!-- Pillar 2: Platform Engineering & DevInfra -->
+  <rect x="1020" y="360" width="208" height="184" rx="12" fill="#F0FDF4" stroke="#BBF7D0"/>
+  <text x="1124" y="386" text-anchor="middle" fill="#15803D" font-size="14" font-weight="800">平台工程 &amp; 研发效能</text>
+  <line x1="1040" y1="398" x2="1208" y2="398" stroke="#BBF7D0"/>
+  <text x="1124" y="422" text-anchor="middle" fill="#1E293B" font-size="13" font-weight="700">IDP 内部开发者平台</text>
+  <text x="1124" y="446" text-anchor="middle" fill="#1E293B" font-size="12.5">Terraform / Crossplane (IaC)</text>
+  <text x="1124" y="470" text-anchor="middle" fill="#1E293B" font-size="12.5">CI/CD 灰度发布与秒级回滚</text>
+  <text x="1124" y="498" text-anchor="middle" fill="#15803D" font-size="11.5" font-weight="600">把底层复杂度封装成自助按钮</text>
+  <text x="1124" y="520" text-anchor="middle" fill="#64748B" font-size="11">让业务开发不用手写千行 YAML</text>
+
+  <!-- Pillar 3: SRE, Chaos & FinOps -->
+  <rect x="1020" y="562" width="208" height="180" rx="12" fill="#FFF7ED" stroke="#FED7AA"/>
+  <text x="1124" y="588" text-anchor="middle" fill="#9A3412" font-size="14" font-weight="800">SRE 稳定性与 FinOps</text>
+  <line x1="1040" y1="600" x2="1208" y2="600" stroke="#FED7AA"/>
+  <text x="1124" y="624" text-anchor="middle" fill="#1E293B" font-size="13" font-weight="700">AIOps 智能告警与自愈</text>
+  <text x="1124" y="648" text-anchor="middle" fill="#1E293B" font-size="12.5">混沌工程演练 / 容灾预案</text>
+  <text x="1124" y="672" text-anchor="middle" fill="#1E293B" font-size="12.5">全链路压测 / 限流降级</text>
+  <text x="1124" y="700" text-anchor="middle" fill="#C2410C" font-size="11.5" font-weight="600">FinOps 算力与云账单治理</text>
+  <text x="1124" y="722" text-anchor="middle" fill="#64748B" font-size="11">守住 99.99% 可用性红线</text>
+
+  <!-- Dashed side connectors -->
+  <line x1="980" y1="227" x2="1004" y2="227" stroke="#94A3B8" stroke-width="2" stroke-dasharray="4 3"/>
+  <line x1="980" y1="361" x2="1004" y2="361" stroke="#94A3B8" stroke-width="2" stroke-dasharray="4 3"/>
+  <line x1="980" y1="485" x2="1004" y2="485" stroke="#94A3B8" stroke-width="2" stroke-dasharray="4 3"/>
+  <line x1="980" y1="609" x2="1004" y2="609" stroke="#94A3B8" stroke-width="2" stroke-dasharray="4 3"/>
+</svg>
