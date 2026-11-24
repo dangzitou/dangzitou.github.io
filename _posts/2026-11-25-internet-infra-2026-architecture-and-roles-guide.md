@@ -1,6 +1,6 @@
 ---
 title: "2026 互联网基础架构（Infra）全景与岗位指南：零基础看懂大厂幕后底座"
-date: 2026-11-25 02:40:00 +0800
+date: 2026-11-25 02:35:00 +0800
 categories: [技术, 架构]
 tags: [Infra, Cloud Infra, AI Infra, Kubernetes, 分布式系统, 异地多活, 校招岗位]
 mermaid: true
